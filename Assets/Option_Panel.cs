@@ -2,9 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
 
 public class Option_Panel : MonoBehaviour
 {
+
     // Start is called before the first frame update
     void Start()
     {
@@ -13,8 +16,7 @@ public class Option_Panel : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        
+    { 
     }
 
     public void OnClickMain()
@@ -23,18 +25,5 @@ public class Option_Panel : MonoBehaviour
         SceneManager.LoadScene("Background");
     }
 
-    // ÀÌ ¸Þ¼Òµå¸¦ UI ¹öÆ°¿¡ ¿¬°á
-    public void ToggleAudio()
-    {
-        if (AudioListener.volume == 0)
-        {
-            AudioListener.volume = 1;
-            Debug.Log("À½¾Ç ÄÑÁü");  // º¼·ýÀÌ 0¿¡¼­ 1·Î ¹Ù²î¸é "À½¾Ç ÄÑÁü" ·Î±× Ãâ·Â
-        }
-        else
-        {
-            AudioListener.volume = 0;
-            Debug.Log("À½¾Ç ²¨Áü");  // º¼·ýÀÌ 1¿¡¼­ 0À¸·Î ¹Ù²î¸é "À½¾Ç ²¨Áü" ·Î±× Ãâ·Â
-        }
-    }
+
 }
