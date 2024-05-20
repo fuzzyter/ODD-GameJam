@@ -5,13 +5,52 @@ using UnityEngine.UI;
 using System.Text.RegularExpressions;
 using TMPro;
 
-/*
-public class Dialogue
+public class DialogSystem : MonoBehaviour
 {
-    [textArea]
-    public string dialogue;
-    public Sprite cg;
-}*/
+    public TextMeshProUGUI dialogueText;
+    public TextMeshProUGUI nameText;
+    //public TextMeshProUGUI face;
+
+    private int currentLineIndex = 0;
+
+    void Start()
+    {
+        if (CSVRead.doubleChatList != null && CSVRead.doubleChatList.Length > 0)
+        {
+            DisplayLine();
+        }
+    }
+
+    void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (currentLineIndex < CSVRead.doubleChatList.GetLength(0) - 1)
+            {
+                currentLineIndex++;
+                DisplayLine();
+            }
+        }
+    }
+
+    void DisplayLine()
+    {
+        string speakerName = CSVRead.doubleChatList[currentLineIndex, 1];
+        string dialogueLine = CSVRead.doubleChatList[currentLineIndex, 3];
+
+        nameText.text = speakerName;
+        dialogueText.text = dialogueLine;
+    }
+}
+
+
+/*
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using System.Text.RegularExpressions;
+using TMPro;
 
 [System.Serializable]
 public struct TalkData
@@ -126,3 +165,4 @@ public class DialogSystem : MonoBehaviour
         public string dialogue;
     }
 }
+*/
