@@ -1,33 +1,43 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class main_menu : MonoBehaviour
+
+public class StartMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public GameObject OptionPanel;
+
+
     void Start()
     {
-
+        OptionPanel.SetActive(false);
     }
 
-    // Update is called once per frame
     void Update()
     {
-
     }
-
     public void OnClickNewGame()
     {
-        Debug.Log("Start");// 현재는 다음 씬이 없어서 
+        Debug.Log("Start New Game");
+        SceneManager.LoadScene("NameInput");
+
     }
+
     public void OnClickLoad()
     {
-        Debug.Log("Continue");
+        Debug.Log("Continue Game");
     }
+
     public void OnClickOption()
     {
-        Debug.Log("Settings");
+        Debug.Log("Open Settings");
+        if (OptionPanel != null)
+        {
+            OptionPanel.SetActive(true); // 옵션 패널을 활성화
+        }
     }
+
     public void OnClickExit()
     {
 #if UNITY_EDITOR
@@ -36,4 +46,6 @@ public class main_menu : MonoBehaviour
         Application.Quit(); // 버튼을 누르면 게임이 종료되도록
 #endif
     }
+
+ 
 }
