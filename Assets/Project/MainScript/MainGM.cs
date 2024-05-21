@@ -8,10 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class MainGM : MonoBehaviour
 {
-    //ï¿½ï¿½ï¿½ï¿½
+    //¿©ÁÖ
     GameObject CharFace;
-    public string playerName;
-    // ï¿½ï¿½Â¥,  ï¿½ï¿½, ï¿½É¼ï¿½
+
+    // ³¯Â¥,  µ·, ¿É¼Ç
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI dayText;
     public int money;
@@ -19,7 +19,7 @@ public class MainGM : MonoBehaviour
     public int setting;
     public GameObject option;
 
-    // ï¿½ï¿½ï¿½ï¿½
+    // ½ºÅÈ
     public int hair;
     public int skin;
     public int weight;
@@ -31,11 +31,11 @@ public class MainGM : MonoBehaviour
     public TextMeshProUGUI talkText;
     public TextMeshProUGUI styleText;
 
-    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½È¼ï¿½Ä¡
+    // ½ºÅÈÃÑÇÕ, µ¥ÀÌÆ® Á¶°Ç ½ºÅÈ¼öÄ¡
     public int totStat;
     public int dateStatLimit;
 
-    // ï¿½ï¿½ï¿½ï¿½Æ®, ï¿½Ì´Ï°ï¿½ï¿½ï¿½, È£ï¿½ï¿½ï¿½ï¿½
+    // µ¥ÀÌÆ®, ¹Ì´Ï°ÔÀÓ, È£°¨µµ
     public GameObject dateBtn;
     public GameObject miniGameBtn;
     public GameObject miniGameBtn2;
@@ -43,27 +43,12 @@ public class MainGM : MonoBehaviour
     public int favorability;
     public int miniGameCnt;
 
-    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½
+    // µ¥ÀÌÅÍ ÀúÀå, ÃÊ±âÈ­ Á¶°Ç
     public int runOnlyOnce;
 
-    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    // ½ºÅÈ ·£´ý ¼öÄ¡ ¹× µµ¹Ú
     private int ramdomNo;
     public GameObject gamblePanel;
-    public GameObject partTimeJobBtn;
-    public GameObject gambleBtn;
-    [SerializeField] GameObject jCoroutine;
-    [SerializeField] GameObject gCoroutine;
-
-    public GameObject goodEndingBtn;
-    public GameObject badEndingBtn;
-    public GameObject hiddenEndingBtn;
-    public GameObject goodEndingImg;
-    public GameObject badEndingImg;
-    public GameObject hiddenEndingImg;
-
-
-    //ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½
-
 
     public void Save()
     {
@@ -96,7 +81,6 @@ public class MainGM : MonoBehaviour
         PlayerPrefs.DeleteKey("dateStatLimit");
         PlayerPrefs.DeleteKey("miniGameCnt");
         PlayerPrefs.DeleteKey("setting");
-        PlayerPrefs.DeleteKey("PlayerName");
     }
 
     // Start is called before the first frame update
@@ -109,9 +93,6 @@ public class MainGM : MonoBehaviour
         day = PlayerPrefs.GetInt("day");
         setting = PlayerPrefs.GetInt("setting");
 
-        //ï¿½Þ¾Æ¿ï¿½
-        playerName = PlayerPrefs.GetString("PlayerName");
-
         hair = PlayerPrefs.GetInt("hair");
         skin = PlayerPrefs.GetInt("skin");
         weight = PlayerPrefs.GetInt("weight");
@@ -121,7 +102,7 @@ public class MainGM : MonoBehaviour
         favorability = PlayerPrefs.GetInt("favorability");
         miniGameCnt = PlayerPrefs.GetInt("miniGameCnt");
 
-        //ï¿½Ê±â°ª ï¿½ï¿½ï¿½ï¿½
+        //ÃÊ±â°ª ¼³Á¤
         if (setting == 0)
         {
             day = 1;
@@ -129,18 +110,10 @@ public class MainGM : MonoBehaviour
             setting++;
         }
 
-        
         option.SetActive(false);
         gamblePanel.SetActive(false);
 
-        jCoroutine = GameObject.FindWithTag("JobMotion");
-        gCoroutine = GameObject.FindWithTag("GambleMotion");
-        jCoroutine.SetActive(false);
-        gCoroutine.SetActive(false);
         
-        goodEndingImg.SetActive(false);
-        badEndingImg.SetActive(false);
-        hiddenEndingImg.SetActive(false);
 
         MiniGameCheck();
     }
@@ -148,7 +121,7 @@ public class MainGM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moneyText.text = money.ToString() + "ì›";
+        moneyText.text = money.ToString() + "¿ø";
         dayText.text = day.ToString() + "/30";
 
         hairText.text =hair.ToString();
@@ -159,77 +132,18 @@ public class MainGM : MonoBehaviour
         favorabilityText.text = favorability.ToString();
 
         totStat = hair + skin + weight + talk + style;
-
-
-        Ending();
-
     }
 
-    
-    public void GoodEnding()
-    {
-        goodEndingImg.SetActive(true);
-        DialogSystem.currentLineIndex = 232;
-        SceneManager.LoadScene("Script");
-    }
-    public void BadEnding()
-    {
-        badEndingImg.SetActive(true);
-        DialogSystem.currentLineIndex = 242;
-        SceneManager.LoadScene("Script");
-    }
-    public void HiddenEnding()
-    {
-        hiddenEndingImg.SetActive(true );
-        DialogSystem.currentLineIndex = 251;
-        SceneManager.LoadScene("Script");
-    }
-    void NotActive()
-    {
-        goodEndingBtn.SetActive(false);
-        badEndingBtn.SetActive(false);
-        hiddenEndingBtn.SetActive(false);
-    }
-    public void NotActive2()
-    {
-        partTimeJobBtn.SetActive(false);
-        gambleBtn.SetActive(false);
-        dateBtn.SetActive(false);
-    }
-    // ending
-    public void Ending()
-    {
-        NotActive();
-        if (favorability >= 100)
-        {
-            NotActive2();
-            goodEndingBtn.SetActive(true);
-        }
-        else if(day >= 30 && favorability <= 0)
-        {
-            NotActive2();
-            hiddenEndingBtn.SetActive(true);
-        }
-        else if(day >= 30)
-        {
-            NotActive2();
-            badEndingBtn.SetActive(true);
-        }
-    }
-
-
-
-    //ï¿½Ë¹ï¿½
+    //¾Ë¹Ù
     public void PartTimeJob()
     {
-        jCoroutine.GetComponent<Anime>().StartMotion();
         money += 30000;
         day += 1;
 
     }
 
 
-    //ï¿½ï¿½ï¿½ï¿½
+    //µµ¹Ú
     public void Gambling()
     {
         ramdomNo = Random.Range(0, 3);
@@ -241,7 +155,6 @@ public class MainGM : MonoBehaviour
         }
 
         gamblePanel.SetActive(false);
-        gCoroutine.GetComponent<Anime>().StartMotion2();
         day += 1;
     }
 
@@ -252,10 +165,10 @@ public class MainGM : MonoBehaviour
             money -= 10000;
             gamblePanel.SetActive(true);
         }
-        else Debug.Log("not enough money.");
+        else Debug.Log("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
     }
 
-    //ï¿½ï¿½ï¿½ï¿½
+    //½ºÅÈ
 
     public void StatUp(ref int stat, string goodMsg, string badMsg, string stopMsg)
     {
@@ -273,13 +186,9 @@ public class MainGM : MonoBehaviour
             if (stat > 20)
                 stat = 20;
         }
-        else if(stat >= 20)
-        {
-            Debug.Log(stopMsg);
-        }
         else
         {
-            Debug.Log("not enough money.");
+            Debug.Log(stopMsg);
         }
     }
 
@@ -287,23 +196,23 @@ public class MainGM : MonoBehaviour
 
     public void Hair()
     {
-        StatUp(ref hair, "good hair!","bad hair", "hair stop");
+        StatUp(ref hair, "³ª ÀÌÁ¤µµ¸é ºÁ ÁÙ¸¸ ÇÑµ¥?", "¸Ó¸®°¡ ¸ÁÇØ¹ö·È¾î!", "hair stop");
     }
     public void Skin()
     {
-        StatUp(ref skin, "good skin!", "bad skin.", "skin stop");
+        StatUp(ref skin, "ÃËÃËÇÏ°Ô ¸¸µé¾îÁÖÁö", "»ó³²ÀÚÆ¯ °ÅÄ£ÇÇºÎ.", "skin stop");
     }
     public void Weight()
     {
-        StatUp(ref weight, "good weight", "bad weight.", "Weight stop");
+        StatUp(ref weight, "¿À´Ã Àú³áÀº »ø·¯µå", "ÇÏ·çÁ¤µ· Ä¡ÆÃµ¥ÀÌ ±¦Âú¾Æ!", "Weight stop");
     }
     public void Talk()
     {
-        StatUp(ref talk, "good talk!", "bad talk.", "Talk stop");
+        StatUp(ref talk, "¿À´ÃÀº Ã¥À» ÀÐ¾îº¼±î", "À¯Æ©ºê ´ñ±Ûº¸¸é¼­ µå¸³À» ¹è¿ìÀÚ", "Talk stop");
     }
     public void Style()
     {
-        StatUp(ref style, "good style!", "bad style.", "Style stop");
+        StatUp(ref style, "ÀÌ°Ô ¿äÁò À¯ÇàÇÏ´Â ½ºÅ¸ÀÏ?", "¾ö¸¶°¡ °ñ¶óÁØ ¿Ê ÀÌ»Ú´ç", "Style stop");
     }
 
     public void SelectDateScenes()
@@ -313,10 +222,10 @@ public class MainGM : MonoBehaviour
             PlayerPrefs.SetInt("runOnlyOnce", 1);
             dateStatLimit += 12;
             Save();
-            SceneManager.LoadScene("Script");
+            SceneManager.LoadScene("Date");
         }
         else
-            Debug.Log("you need " + dateStatLimit + "favorability.");
+            Debug.Log("½ºÅÈ ÃÑÇÕÀÌ " + dateStatLimit + "Á¡ ÀÌ»óÀÏ½Ã °¡´ÉÇÕ´Ï´Ù.");
     }
 
     public void MiniGameCheck()
@@ -345,7 +254,7 @@ public class MainGM : MonoBehaviour
     {
         miniGameCnt++;
         Save();
-        SceneManager.LoadScene("Mini_Block");
+        SceneManager.LoadScene("MiniGame");
         MiniGameCheck();
     }
     public void SelectMiniGameScence2()
@@ -356,7 +265,7 @@ public class MainGM : MonoBehaviour
         MiniGameCheck();
     }
 
-    // ï¿½É¼ï¿½ Ã¢
+    // ¿É¼Ç Ã¢
     public void OptionOpen()
     {
         option.SetActive(true);
@@ -380,7 +289,6 @@ public class MainGM : MonoBehaviour
         int savePoint9 = PlayerPrefs.GetInt("Is_miniGameCnt");
         int savePoint10 = PlayerPrefs.GetInt("Is_dateStatLimit");
         int savePoint11 = PlayerPrefs.GetInt("Is_setting");
-        string savePoint12 = PlayerPrefs.GetString("Is_PlayerName");
 
         PlayerPrefs.SetInt("Is_money", money);
         PlayerPrefs.SetInt("Is_day", day);
@@ -394,7 +302,6 @@ public class MainGM : MonoBehaviour
         PlayerPrefs.SetInt("Is_miniGameCnt", miniGameCnt);
         PlayerPrefs.SetInt("Is_dateStatLimit", dateStatLimit);
         PlayerPrefs.SetInt("Is_setting", setting);
-        PlayerPrefs.SetString("Is_PlayerName", playerName);
     }
 
     public void OptionLoad()
@@ -411,29 +318,26 @@ public class MainGM : MonoBehaviour
         PlayerPrefs.SetInt("miniGameCnt", PlayerPrefs.GetInt("Is_miniGameCnt"));
         PlayerPrefs.SetInt("dateStatLimit", PlayerPrefs.GetInt("Is_dateStatLimit"));
         PlayerPrefs.SetInt("setting", PlayerPrefs.GetInt("Is_setting"));
-        PlayerPrefs.SetString("PlayerName", PlayerPrefs.GetString("Is_PlayerName"));
         //Start();//lock (this) { }
         SceneManager.LoadScene("Main");
     }
 
     public void OptionTitle()
     {
-        Save();
         SceneManager.LoadScene("Background");
     }
 
     public void OptionQuit()
     {
         SaveDistroy();
-        // editor quit code
+        // ¿¡µðÅÍ¿¡¼­ ½ÇÇà ÁßÀÎÁö È®ÀÎ (¿¡µðÅÍ¿¡¼­ Á¾·á Å×½ºÆ®¸¦ À§ÇØ ÇÊ¿ä)
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-        // editor quit code
+        // ºôµåµÈ °ÔÀÓ¿¡¼­ °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.
         Application.Quit();
 #endif
     }
 
-    
     
 }
