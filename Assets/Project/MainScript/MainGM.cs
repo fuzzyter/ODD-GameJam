@@ -11,12 +11,15 @@ using UnityEngine.SceneManagement;
 
 public class MainGM : MonoBehaviour
 {
+    // 날짜,  돈, 옵션
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI dayText;
     public int money;
     public int day;
     public int setting;
+    public GameObject option;
 
+    // 스탯
     public int hair;
     public int skin;
     public int weight;
@@ -28,9 +31,11 @@ public class MainGM : MonoBehaviour
     public TextMeshProUGUI talkText;
     public TextMeshProUGUI styleText;
 
+    // 스탯총합, 데이트 조건 스탯수치
     public int totStat;
     public int dateStatLimit;
 
+    // 데이트, 미니게임, 호감도
     public GameObject dateBtn;
     public GameObject miniGameBtn;
     public GameObject miniGameBtn2;
@@ -38,14 +43,15 @@ public class MainGM : MonoBehaviour
     public int favorability;
     public int miniGameCnt;
 
-
+    // 데이터 저장, 초기화 조건
     public int runOnlyOnce;
 
+    // 스탯 랜덤 수치
     private int ramdomNo;
 
     public void Save()
     {
-        
+
         PlayerPrefs.SetInt("money", money);
         PlayerPrefs.SetInt("day", day);
         PlayerPrefs.SetInt("hair", hair);
@@ -80,8 +86,8 @@ public class MainGM : MonoBehaviour
     void Start()
     {
         runOnlyOnce = PlayerPrefs.GetInt("runOnlyOnce");
-        if (runOnlyOnce == 0) { SaveDistroy(); }
-        else PlayerPrefs.SetInt("runOnlyOnce", 0);
+        /*if (runOnlyOnce == 0) { SaveDistroy(); }
+        else PlayerPrefs.SetInt("runOnlyOnce", 0);*/
         money = PlayerPrefs.GetInt("money");
         day = PlayerPrefs.GetInt("day");
         setting = PlayerPrefs.GetInt("setting");
@@ -244,6 +250,78 @@ public class MainGM : MonoBehaviour
         MiniGameCheck();
     }
 
+    // 옵션 창
+    public void OptionOpen()
+    {
+        option.SetActive(true);
+    }
+    public void OptionClose()
+    {
+        option.SetActive(false);
+    }
 
+    public void OptionSave()
+    {
+         int savePoint0 = PlayerPrefs.GetInt("Is_money");
+         int savePoint1 = PlayerPrefs.GetInt("Is_day");
+         int savePoint2 = PlayerPrefs.GetInt("Is_hair");
+         int savePoint3 = PlayerPrefs.GetInt("Is_skin");
+         int savePoint4 = PlayerPrefs.GetInt("Is_weight");
+         int savePoint5 = PlayerPrefs.GetInt("Is_talk");
+         int savePoint6 = PlayerPrefs.GetInt("Is_style");
+         int savePoint7 = PlayerPrefs.GetInt("Is_dateStatLimit");
+         int savePoint8 = PlayerPrefs.GetInt("Is_favorability");
+         int savePoint9 = PlayerPrefs.GetInt("Is_miniGameCnt");
+         int savePoint10 = PlayerPrefs.GetInt("Is_dateStatLimit");
+         int savePoint11 = PlayerPrefs.GetInt("Is_setting");
+
+        PlayerPrefs.SetInt("Is_money", money);
+        PlayerPrefs.SetInt("Is_day", day);
+        PlayerPrefs.SetInt("Is_hair", hair);
+        PlayerPrefs.SetInt("Is_skin", skin);
+        PlayerPrefs.SetInt("Is_weight", weight);
+        PlayerPrefs.SetInt("Is_talk", talk);
+        PlayerPrefs.SetInt("Is_style", style);
+        PlayerPrefs.SetInt("Is_dateStatLimit", dateStatLimit);
+        PlayerPrefs.SetInt("Is_favorability", favorability);
+        PlayerPrefs.SetInt("Is_miniGameCnt", miniGameCnt);
+        PlayerPrefs.SetInt("Is_dateStatLimit", dateStatLimit);
+        PlayerPrefs.SetInt("Is_setting", setting);
+    }
+
+    public void OptionLoad()
+    {
+        PlayerPrefs.SetInt("money", PlayerPrefs.GetInt("Is_money"));
+        PlayerPrefs.SetInt("day", PlayerPrefs.GetInt("Is_day"));
+        PlayerPrefs.SetInt("hair", PlayerPrefs.GetInt("Is_hair"));
+        PlayerPrefs.SetInt("skin", PlayerPrefs.GetInt("Is_skin"));
+        PlayerPrefs.SetInt("weight", PlayerPrefs.GetInt("Is_weight"));
+        PlayerPrefs.SetInt("talk", PlayerPrefs.GetInt("Is_talk"));
+        PlayerPrefs.SetInt("style", PlayerPrefs.GetInt("Is_style"));
+        PlayerPrefs.SetInt("dateStatLimit", PlayerPrefs.GetInt("Is_dateStatLimit"));
+        PlayerPrefs.SetInt("favorability", PlayerPrefs.GetInt("Is_favorability"));
+        PlayerPrefs.SetInt("miniGameCnt", PlayerPrefs.GetInt("Is_miniGameCnt"));
+        PlayerPrefs.SetInt("dateStatLimit", PlayerPrefs.GetInt("Is_dateStatLimit"));
+        PlayerPrefs.SetInt("setting", PlayerPrefs.GetInt("Is_setting"));
+        //Start();//lock (this) { }
+        SceneManager.LoadScene("Main");
+    }
+
+    public void OptionTitle()
+    {
+        SceneManager.LoadScene("Background");
+    }
+
+    public void OptionQuit()
+    {
+        SaveDistroy();
+        // 에디터에서 실행 중인지 확인 (에디터에서 종료 테스트를 위해 필요)
+#if UNITY_EDITOR
+        UnityEditor.EditorApplication.isPlaying = false;
+#else
+        // 빌드된 게임에서 게임을 종료합니다.
+        Application.Quit();
+#endif
+    }
 
 }
