@@ -12,7 +12,7 @@ public class DateGM : MonoBehaviour
     }
     public void SelectMainScenes()
     {
-        favo += 40;
+        favo += 20;
         PlayerPrefs.SetInt("favorability", favo);
         SceneManager.LoadScene("Main");
     }
