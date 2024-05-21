@@ -1,16 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 using TMPro;
 using UnityEngine.UI;
-
-using System.Collections;
 using UnityEngine.SceneManagement;
 
 
 public class MainGM : MonoBehaviour
 {
+    //여주
+    GameObject CharFace;
+
     // 날짜,  돈, 옵션
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI dayText;
@@ -46,8 +46,9 @@ public class MainGM : MonoBehaviour
     // 데이터 저장, 초기화 조건
     public int runOnlyOnce;
 
-    // 스탯 랜덤 수치
+    // 스탯 랜덤 수치 및 도박
     private int ramdomNo;
+    public GameObject gamblePanel;
 
     public void Save()
     {
@@ -109,21 +110,26 @@ public class MainGM : MonoBehaviour
             setting++;
         }
 
+        option.SetActive(false);
+        gamblePanel.SetActive(false);
+
+        
+
         MiniGameCheck();
     }
 
     // Update is called once per frame
     void Update()
     {
-        moneyText.text = money.ToString() + "￦";
-        dayText.text = "Day " + day.ToString() + "/30";
+        moneyText.text = money.ToString() + "원";
+        dayText.text = day.ToString() + "/30";
 
-        hairText.text = "헤어 : " + hair.ToString();
-        skinText.text = "피부 : " + skin.ToString();
-        weightText.text = "체중 : " + weight.ToString();
-        talkText.text = "대화 : " + talk.ToString();
-        styleText.text = "스타일 : " + style.ToString();
-        favorabilityText.text = "호감도 " + favorability.ToString() + "/100";
+        hairText.text =hair.ToString();
+        skinText.text = skin.ToString();
+        weightText.text =  weight.ToString();
+        talkText.text =  talk.ToString();
+        styleText.text =  style.ToString();
+        favorabilityText.text = favorability.ToString();
 
         totStat = hair + skin + weight + talk + style;
     }
@@ -136,23 +142,30 @@ public class MainGM : MonoBehaviour
 
     }
 
+
     //도박
     public void Gambling()
+    {
+        ramdomNo = Random.Range(0, 3);
+        switch (ramdomNo)
+        {
+            case 0: break;
+            case 1: money += 15000; break;
+            case 2: money += 60000; break;
+        }
+
+        gamblePanel.SetActive(false);
+        day += 1;
+    }
+
+    public void GamebleOpen()
     {
         if (money >= 10000)
         {
             money -= 10000;
-
-            ramdomNo = Random.Range(0, 3);
-            switch (ramdomNo)
-            {
-                case 0: break;
-                case 1: money += 15000; break;
-                case 2: money += 60000; break;
-            }
-
-            day += 1;
+            gamblePanel.SetActive(true);
         }
+        else Debug.Log("돈이 부족합니다.");
     }
 
     //스탯
@@ -220,11 +233,13 @@ public class MainGM : MonoBehaviour
         if (favorability >= 80 && miniGameCnt == 1)
         {
             dateBtn.SetActive(false);
+            miniGameBtn.SetActive(false);
             miniGameBtn2.SetActive(true);
         }
         else if (favorability >= 40 && miniGameCnt == 0)
         {
             dateBtn.SetActive(false);
+            miniGameBtn2.SetActive(false);
             miniGameBtn.SetActive(true);
         }
         else
@@ -262,18 +277,18 @@ public class MainGM : MonoBehaviour
 
     public void OptionSave()
     {
-         int savePoint0 = PlayerPrefs.GetInt("Is_money");
-         int savePoint1 = PlayerPrefs.GetInt("Is_day");
-         int savePoint2 = PlayerPrefs.GetInt("Is_hair");
-         int savePoint3 = PlayerPrefs.GetInt("Is_skin");
-         int savePoint4 = PlayerPrefs.GetInt("Is_weight");
-         int savePoint5 = PlayerPrefs.GetInt("Is_talk");
-         int savePoint6 = PlayerPrefs.GetInt("Is_style");
-         int savePoint7 = PlayerPrefs.GetInt("Is_dateStatLimit");
-         int savePoint8 = PlayerPrefs.GetInt("Is_favorability");
-         int savePoint9 = PlayerPrefs.GetInt("Is_miniGameCnt");
-         int savePoint10 = PlayerPrefs.GetInt("Is_dateStatLimit");
-         int savePoint11 = PlayerPrefs.GetInt("Is_setting");
+        int savePoint0 = PlayerPrefs.GetInt("Is_money");
+        int savePoint1 = PlayerPrefs.GetInt("Is_day");
+        int savePoint2 = PlayerPrefs.GetInt("Is_hair");
+        int savePoint3 = PlayerPrefs.GetInt("Is_skin");
+        int savePoint4 = PlayerPrefs.GetInt("Is_weight");
+        int savePoint5 = PlayerPrefs.GetInt("Is_talk");
+        int savePoint6 = PlayerPrefs.GetInt("Is_style");
+        int savePoint7 = PlayerPrefs.GetInt("Is_dateStatLimit");
+        int savePoint8 = PlayerPrefs.GetInt("Is_favorability");
+        int savePoint9 = PlayerPrefs.GetInt("Is_miniGameCnt");
+        int savePoint10 = PlayerPrefs.GetInt("Is_dateStatLimit");
+        int savePoint11 = PlayerPrefs.GetInt("Is_setting");
 
         PlayerPrefs.SetInt("Is_money", money);
         PlayerPrefs.SetInt("Is_day", day);
@@ -324,4 +339,5 @@ public class MainGM : MonoBehaviour
 #endif
     }
 
+    
 }
