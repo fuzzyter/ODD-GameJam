@@ -49,6 +49,10 @@ public class MainGM : MonoBehaviour
     // 스탯 랜덤 수치 및 도박
     private int ramdomNo;
     public GameObject gamblePanel;
+    public GameObject partTimeJobBtn;
+    public GameObject gambleBtn;
+
+    public GameObject endingBtn;
 
     public void Save()
     {
@@ -116,6 +120,7 @@ public class MainGM : MonoBehaviour
         
 
         MiniGameCheck();
+        ending();
     }
 
     // Update is called once per frame
@@ -132,6 +137,23 @@ public class MainGM : MonoBehaviour
         favorabilityText.text = favorability.ToString();
 
         totStat = hair + skin + weight + talk + style;
+    }
+
+    // ending
+    public void ending()
+    {
+        if(day >= 30)
+        {
+            day = 30;
+            partTimeJobBtn.SetActive(false);
+            gambleBtn.SetActive(false);
+            dateBtn.SetActive(false);
+            endingBtn.SetActive(true);
+        }
+        else 
+        {
+            endingBtn.SetActive(false);
+        }
     }
 
     //알바
