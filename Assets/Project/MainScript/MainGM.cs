@@ -51,8 +51,15 @@ public class MainGM : MonoBehaviour
     public GameObject gamblePanel;
     public GameObject partTimeJobBtn;
     public GameObject gambleBtn;
+    [SerializeField] GameObject jCoroutine;
+    [SerializeField] GameObject gCoroutine;
 
     public GameObject endingBtn;
+
+    
+
+    //도박모션
+    
 
     public void Save()
     {
@@ -117,7 +124,10 @@ public class MainGM : MonoBehaviour
         option.SetActive(false);
         gamblePanel.SetActive(false);
 
-        
+        jCoroutine = GameObject.FindWithTag("JobMotion");
+        gCoroutine = GameObject.FindWithTag("GambleMotion");
+        jCoroutine.SetActive(false);
+        gCoroutine.SetActive(false);
 
         MiniGameCheck();
         ending();
@@ -137,6 +147,7 @@ public class MainGM : MonoBehaviour
         favorabilityText.text = favorability.ToString();
 
         totStat = hair + skin + weight + talk + style;
+
     }
 
     // ending
@@ -159,6 +170,7 @@ public class MainGM : MonoBehaviour
     //알바
     public void PartTimeJob()
     {
+        jCoroutine.GetComponent<Anime>().StartMotion();
         money += 30000;
         day += 1;
 
@@ -177,6 +189,7 @@ public class MainGM : MonoBehaviour
         }
 
         gamblePanel.SetActive(false);
+        gCoroutine.GetComponent<Anime>().StartMotion2();
         day += 1;
     }
 
@@ -361,5 +374,6 @@ public class MainGM : MonoBehaviour
 #endif
     }
 
+    
     
 }
