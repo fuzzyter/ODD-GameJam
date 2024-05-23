@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NameInput.unity
     guid: d214c4269716f794c9ded4b6c79f8204
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: dc046a94e4f8f5547938b095b8d78925
   m_configObjects: {}
