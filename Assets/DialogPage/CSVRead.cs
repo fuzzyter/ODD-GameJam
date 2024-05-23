@@ -6,7 +6,7 @@ using System.Text.RegularExpressions;
 
 public class CSVRead : MonoBehaviour
 {
-    public int chatTable_col = 5;
+    public int chatTable_col = 8;
     public TextAsset chat_Table;
 
     public static string[,] doubleChatList;
