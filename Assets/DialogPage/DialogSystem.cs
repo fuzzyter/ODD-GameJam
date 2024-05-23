@@ -17,16 +17,10 @@ public class DialogSystem : MonoBehaviour
     public TextMeshProUGUI ChoiceText01;
     public TextMeshProUGUI ChoiceText02;
 
-    private int currentLineIndex = 0;
+    public static int currentLineIndex = 0;
 
     void Start()
-    {/*
-        // 이전 진행 상황이 저장되어 있으면 불러오기
-        if (PlayerPrefs.HasKey("CurrentLineIndex"))
-        {
-            currentLineIndex = PlayerPrefs.GetInt("CurrentLineIndex");
-        }
-        */
+    {
         if (CSVRead.doubleChatList != null && CSVRead.doubleChatList.Length > 0)
         {
             DisplayLine();
@@ -40,17 +34,14 @@ public class DialogSystem : MonoBehaviour
             if (currentLineIndex < CSVRead.doubleChatList.GetLength(0) - 1)
             {
                 currentLineIndex++;
+                if (currentLineIndex == 38)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
                 DisplayLine();
             }
         }
     }
-    /*
-    void OnDisable()
-    {
-        // 진행 상황 저장
-        PlayerPrefs.SetInt("CurrentLineIndex", currentLineIndex);
-        PlayerPrefs.Save();
-    }*/
 
     void DisplayLine()
     {
@@ -121,12 +112,5 @@ public class DialogSystem : MonoBehaviour
             ChoiceText01.gameObject.SetActive(false);
             ChoiceText02.gameObject.SetActive(false);
         }
-
-        //선택지내용넣는코드ㅡㅡ
-        //선택지따라코드건너뛰기(인덱스번호 이용)(이 코드에 클릭이벤트 추가)
-
-        //변수따라 다른csv실행(이거는 dialogsystem, csvread수정) 
-        //선택지 고르면 호감도 리턴(이건근데 코드끝나고 해도 되려나?)
-     
     }
 }

@@ -593,7 +593,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 830415109}
   m_CullTransparentMesh: 1
---- !u!1 &1103649014
+--- !u!1 &947653934
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -601,46 +601,37 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1103649016}
-  - component: {fileID: 1103649015}
+  - component: {fileID: 947653936}
+  - component: {fileID: 947653935}
   m_Layer: 0
-  m_Name: DialogSystem01
+  m_Name: SceneControl
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1103649015
+--- !u!114 &947653935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103649014}
+  m_GameObject: {fileID: 947653934}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: aeaddc24820fc6f4cb3d489868d81d09, type: 3}
+  m_Script: {fileID: 11500000, guid: fe2f992df0518b94db9dcbd78a1f042f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dialogueText: {fileID: 1536161203}
-  nameText: {fileID: 1189192959}
-  illustrationImage: {fileID: 1366314145}
-  backgroundImage: {fileID: 1822082112}
-  BlackImage: {fileID: 97751740}
-  Choice01: {fileID: 277255063}
-  Choice02: {fileID: 1231295931}
-  ChoiceText01: {fileID: 270265532}
-  ChoiceText02: {fileID: 0}
---- !u!4 &1103649016
+--- !u!4 &947653936
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1103649014}
+  m_GameObject: {fileID: 947653934}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 876.2764, y: 547.6738, z: 4.407731}
+  m_LocalPosition: {x: 909.2941, y: 571.61786, z: 4.7813153}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1824,4 +1815,4 @@ SceneRoots:
   - {fileID: 1398937117}
   - {fileID: 201413087}
   - {fileID: 1398081168}
-  - {fileID: 1103649016}
+  - {fileID: 947653936}
