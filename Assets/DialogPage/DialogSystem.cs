@@ -38,6 +38,38 @@ public class DialogSystem : MonoBehaviour
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
+                if (currentLineIndex == 72)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
+                if (currentLineIndex == 81)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
+                if (currentLineIndex == 92)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
+                if (currentLineIndex == 104)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
+                if (currentLineIndex == 153)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
+                if (currentLineIndex == 164)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
+                if (currentLineIndex == 187)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
+                if (currentLineIndex == 204)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
                 DisplayLine();
             }
         }
