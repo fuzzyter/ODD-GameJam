@@ -16,8 +16,6 @@ public class MiniGM : MonoBehaviour
 
     bool timeActive;
 
-    int fov; 
-
 
     //방
     public GameObject midRoom;
@@ -39,8 +37,8 @@ public class MiniGM : MonoBehaviour
     public GameObject item5; //가방
     public GameObject item6; //우유
     public GameObject item7; //책
-    public GameObject item8;//프로틴
-    public GameObject item9;//화분
+    public GameObject item10;//프로틴
+    public GameObject item11;//화분
     bool item_1;
     bool item_2;
     bool item_3;
@@ -48,12 +46,11 @@ public class MiniGM : MonoBehaviour
     bool item_5;
     bool item_6;
     bool item_7;
-    bool item_8;
-    bool item_9;
+    bool item_10;
+    bool item_11;
 
     void Setting()
     {
-        fov = PlayerPrefs.GetInt("favorability");
         item_1 = false;
         item_2 = false;
         item_3 = false;
@@ -61,8 +58,8 @@ public class MiniGM : MonoBehaviour
         item_5 = false;
         item_6 = false;
         item_7 = false;
-        item_8 = false;
-        item_9 = false;
+        item_10 = false;
+        item_11 = false;
 
         timeActive = false;
         time = 10f;
@@ -139,8 +136,6 @@ public class MiniGM : MonoBehaviour
             door.SetActive(false);
             character.SetActive(true);
             gameEndPanel.SetActive(true);
-            fov += 10;
-            PlayerPrefs.SetInt("favorability",fov);
         }
         else
             Debug.Log("물건을 다 찾으세요.");
@@ -168,11 +163,6 @@ public class MiniGM : MonoBehaviour
     public void Item2() { GetItem(ref item2, ref item_2); }
     public void Item3() { GetItem(ref item3, ref item_3); }
     public void Item4() { GetItem(ref item4, ref item_4); }
-    public void Item5() { GetItem(ref item5, ref item_5); }
-    public void Item6() { GetItem(ref item6, ref item_6); }
-    public void Item7() { GetItem(ref item7, ref item_7); }
-    public void Item8() { GetItem(ref item8, ref item_8); }
-    public void Item9() { GetItem(ref item9, ref item_9); }
 
 
     public void RePlay()
