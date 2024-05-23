@@ -9,7 +9,13 @@ public class DialogSystem : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
     public TextMeshProUGUI nameText;
-    //public TextMeshProUGUI face;
+    public Image illustrationImage;
+    public Image backgroundImage;
+    public Image BlackImage;
+    public Button Choice01;
+    public Button Choice02;
+    public TextMeshProUGUI ChoiceText01;
+    public TextMeshProUGUI ChoiceText02;
 
     private int currentLineIndex = 0;
 
@@ -36,133 +42,67 @@ public class DialogSystem : MonoBehaviour
     void DisplayLine()
     {
         string speakerName = CSVRead.doubleChatList[currentLineIndex, 1];
+        string illustrationName = CSVRead.doubleChatList[currentLineIndex, 2];
         string dialogueLine = CSVRead.doubleChatList[currentLineIndex, 3];
+        string isChoice = CSVRead.doubleChatList[currentLineIndex, 4];
+        string backgroundName = CSVRead.doubleChatList[currentLineIndex, 6];
 
         nameText.text = speakerName;
         dialogueText.text = dialogueLine;
-    }
-}
 
+        Choice01.gameObject.SetActive(false);
+        Choice02.gameObject.SetActive(false);
 
-/*
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using System.Text.RegularExpressions;
-using TMPro;
-
-[System.Serializable]
-public struct TalkData
-{
-    public string name;
-    public string[] contexts;
-}
-
-public class DialogSystem : MonoBehaviour
-{
-    [SerializeField] private Speaker[] speakers;
-    [SerializeField] private DialogData[] dialogs;
-    private bool isAutoStart = true;
-    private bool isFirst = true;
-    private int currentDialogIndex = -1;
-    private int currentSpeakerIndex = 0;
-
-    private void Awake()
-    {
-        Setup();
-    }
-
-    private void Setup()
-    {
-        for (int i = 0; i < speakers.Length; ++i)
+        // 일러스트 이미지를 업데이트
+        if (!string.IsNullOrEmpty(illustrationName))
         {
-            SetActiveObjects(speakers[i], false);
-            speakers[i].spriteRenderer.gameObject.SetActive(true);
+            illustrationImage.gameObject.SetActive(true);
+            illustrationImage.sprite = Resources.Load<Sprite>(illustrationName);
         }
-    }
-
-    public bool UpdateDialog()
-    {
-        if (isFirst == true)
+        else
         {
-            Setup();
-            if (isAutoStart) SetNextDialog();
-
-            isFirst = false;
+            illustrationImage.gameObject.SetActive(false);
         }
-        if (Input.GetMouseButtonDown(0))
+
+        // 배경 이미지를 업데이트
+        if (!string.IsNullOrEmpty(backgroundName))
         {
-            if (dialogs.Length > currentDialogIndex + 1)
+            BlackImage.gameObject.SetActive(false);
+            Debug.Log($"Loading background: {backgroundName}"); // Debug.Log 추가
+            Sprite backgroundSprite = Resources.Load<Sprite>(backgroundName);
+            if (backgroundSprite != null)
             {
-                SetNextDialog();
+                backgroundImage.sprite = backgroundSprite;
             }
             else
             {
-                for (int i = 0; i < speakers.Length; ++i)
-                {
-                    SetActiveObjects(speakers[i], false);
-                    speakers[i].spriteRenderer.gameObject.SetActive(true);
-                }
-                return true;
+                Debug.LogError($"Background sprite not found: {backgroundName}");
             }
         }
-
-        return false;
-    }
-
-    private void SetNextDialog()
-    {
-        if (currentDialogIndex >= 0)
+        else
         {
-            SetActiveObjects(speakers[currentSpeakerIndex], false);
+            BlackImage.gameObject.SetActive(true);
+            backgroundImage.sprite = null;
+        }
+        /*
+        //선택지가 존재한다면 선택창/검은배경 표시
+        if (!string.IsNullOrEmpty(isChoice))
+        {
+            Debug.Log(isChoice);
+            Choice01.gameObject.SetActive(true);
+            Choice02.gameObject.SetActive(true);
+            ChoiceText01.gameObject.SetActive(true);
+            ChoiceText02.gameObject.SetActive(true);
+            BlackImage.gameObject.SetActive(true);
         }
 
-        currentDialogIndex++;
-
-        if (currentDialogIndex >= dialogs.Length)
+        else //선택지가 공란이면 선택창X
         {
-            return;
+            Choice01.gameObject.SetActive(false);
+            Choice02.gameObject.SetActive(false);
+            ChoiceText01.gameObject.SetActive(false);
+            ChoiceText02.gameObject.SetActive(false);
         }
-
-        currentSpeakerIndex = dialogs[currentDialogIndex].speakerIndex;
-
-        SetActiveObjects(speakers[currentSpeakerIndex], true);
-
-        speakers[currentSpeakerIndex].textName.text = dialogs[currentDialogIndex].name;
-        speakers[currentSpeakerIndex].textDialogue.text = dialogs[currentDialogIndex].dialogue;
-    }
-
-    private void SetActiveObjects(Speaker speaker, bool visible)
-    {
-        speaker.imageDialog.gameObject.SetActive(visible);
-        speaker.textName.gameObject.SetActive(visible);
-        speaker.textDialogue.gameObject.SetActive(visible);
-
-        speaker.objectArrow.SetActive(false);
-
-        Color color = speaker.spriteRenderer.color;
-        color.a = visible ? 1 : 0.2f;
-        speaker.spriteRenderer.color = color;
-    }
-
-    [System.Serializable]
-    public struct Speaker
-    {
-        public SpriteRenderer spriteRenderer;
-        public Image imageDialog;
-        public TextMeshProUGUI textName;
-        public TextMeshProUGUI textDialogue;
-        public GameObject objectArrow;
-    }
-
-    [System.Serializable]
-    public struct DialogData
-    {
-        public int speakerIndex;
-        public string name;
-        [TextArea(3, 5)]
-        public string dialogue;
+        */
     }
 }
-*/
