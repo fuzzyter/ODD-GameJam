@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/Background.unity
+    path: Assets/Scenes/Seoeun/Background.unity
     guid: d62cd0a3d948a564aaf7783bd26381b8
   - enabled: 0
     path: Assets/Scenes/Options.unity
     guid: 4772c5a5673ca3142aa249e0867fe3c3
   - enabled: 1
-    path: Assets/Scenes/NameInput.unity
+    path: Assets/Scenes/Seoeun/NameInput.unity
     guid: d214c4269716f794c9ded4b6c79f8204
   - enabled: 1
     path: Assets/Scenes/Main.unity
