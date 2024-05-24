@@ -20,8 +20,11 @@ public class DialogSystem : MonoBehaviour
     public static int currentLineIndex = 0;
     private string Name;
 
+    int first_print;
+
     void Start()
     {
+        first_print = 0;
         Name = PlayerPrefs.GetString("PlayerName");
         Debug.Log(Name);
 
@@ -36,24 +39,28 @@ public class DialogSystem : MonoBehaviour
 
     void Update()
     {
+        if(first_print == 0) { currentLineIndex++; DisplayLine(); first_print++; }
         if (Input.GetMouseButtonDown(0))
         {
 
-            if (currentLineIndex < CSVRead.doubleChatList.GetLength(0) - 1 && currentLineIndex != 64)
+            if (currentLineIndex < CSVRead.doubleChatList.GetLength(0) - 1 && currentLineIndex != 64 && currentLineIndex != 83 && currentLineIndex != 99 && currentLineIndex != 114)
             {
-                Debug.Log("인덱스++전"+currentLineIndex);
+                /*Debug.Log("인덱스++전"+currentLineIndex);
                 currentLineIndex++;
-                Debug.Log("인덱스++후"+currentLineIndex);
+                Debug.Log("인덱스++후"+currentLineIndex);*/
                 if (currentLineIndex == 38)
                 {
+                    currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
                 if (currentLineIndex == 70)
                 {
+                    //currentLineIndex--;
                     currentLineIndex = 80;
                 }
                 if (currentLineIndex == 80)
                 {
+                    currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
                 if (currentLineIndex == 88)
@@ -62,6 +69,7 @@ public class DialogSystem : MonoBehaviour
                 }
                 if (currentLineIndex == 97)
                 {
+                    currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
                 if (currentLineIndex == 101)
@@ -70,6 +78,7 @@ public class DialogSystem : MonoBehaviour
                 }
                 if (currentLineIndex == 111)
                 {
+                    currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
                 if (currentLineIndex == 119)
@@ -78,24 +87,32 @@ public class DialogSystem : MonoBehaviour
                 }
                 if (currentLineIndex == 130)
                 {
+                    currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
                 if (currentLineIndex == 179)
                 {
+                    currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
                 if (currentLineIndex == 190)
                 {
+                    currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
                 if (currentLineIndex == 213)
                 {
+                    currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
                 if (currentLineIndex == 231)
                 {
+                    currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
+                Debug.Log("인덱스++전" + currentLineIndex);
+                currentLineIndex++;
+                Debug.Log("인덱스++후" + currentLineIndex);
                 DisplayLine();
             }
         }
