@@ -8,10 +8,10 @@ using UnityEngine.SceneManagement;
 
 public class MainGM : MonoBehaviour
 {
-    //¿©ÁÖ
+    //ï¿½ï¿½ï¿½ï¿½
     GameObject CharFace;
 
-    // ³¯Â¥,  µ·, ¿É¼Ç
+    // ï¿½ï¿½Â¥,  ï¿½ï¿½, ï¿½É¼ï¿½
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI dayText;
     public int money;
@@ -19,7 +19,7 @@ public class MainGM : MonoBehaviour
     public int setting;
     public GameObject option;
 
-    // ½ºÅÈ
+    // ï¿½ï¿½ï¿½ï¿½
     public int hair;
     public int skin;
     public int weight;
@@ -31,11 +31,11 @@ public class MainGM : MonoBehaviour
     public TextMeshProUGUI talkText;
     public TextMeshProUGUI styleText;
 
-    // ½ºÅÈÃÑÇÕ, µ¥ÀÌÆ® Á¶°Ç ½ºÅÈ¼öÄ¡
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½È¼ï¿½Ä¡
     public int totStat;
     public int dateStatLimit;
 
-    // µ¥ÀÌÆ®, ¹Ì´Ï°ÔÀÓ, È£°¨µµ
+    // ï¿½ï¿½ï¿½ï¿½Æ®, ï¿½Ì´Ï°ï¿½ï¿½ï¿½, È£ï¿½ï¿½ï¿½ï¿½
     public GameObject dateBtn;
     public GameObject miniGameBtn;
     public GameObject miniGameBtn2;
@@ -43,10 +43,10 @@ public class MainGM : MonoBehaviour
     public int favorability;
     public int miniGameCnt;
 
-    // µ¥ÀÌÅÍ ÀúÀå, ÃÊ±âÈ­ Á¶°Ç
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½, ï¿½Ê±ï¿½È­ ï¿½ï¿½ï¿½ï¿½
     public int runOnlyOnce;
 
-    // ½ºÅÈ ·£´ý ¼öÄ¡ ¹× µµ¹Ú
+    // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     private int ramdomNo;
     public GameObject gamblePanel;
     public GameObject partTimeJobBtn;
@@ -58,7 +58,7 @@ public class MainGM : MonoBehaviour
 
     
 
-    //µµ¹Ú¸ð¼Ç
+    //ï¿½ï¿½ï¿½Ú¸ï¿½ï¿½
     
 
     public void Save()
@@ -113,7 +113,7 @@ public class MainGM : MonoBehaviour
         favorability = PlayerPrefs.GetInt("favorability");
         miniGameCnt = PlayerPrefs.GetInt("miniGameCnt");
 
-        //ÃÊ±â°ª ¼³Á¤
+        //ï¿½Ê±â°ª ï¿½ï¿½ï¿½ï¿½
         if (setting == 0)
         {
             day = 1;
@@ -136,7 +136,7 @@ public class MainGM : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        moneyText.text = money.ToString() + "¿ø";
+        moneyText.text = money.ToString() + "ï¿½ï¿½";
         dayText.text = day.ToString() + "/30";
 
         hairText.text =hair.ToString();
@@ -167,7 +167,7 @@ public class MainGM : MonoBehaviour
         }
     }
 
-    //¾Ë¹Ù
+    //ï¿½Ë¹ï¿½
     public void PartTimeJob()
     {
         jCoroutine.GetComponent<Anime>().StartMotion();
@@ -177,7 +177,7 @@ public class MainGM : MonoBehaviour
     }
 
 
-    //µµ¹Ú
+    //ï¿½ï¿½ï¿½ï¿½
     public void Gambling()
     {
         ramdomNo = Random.Range(0, 3);
@@ -200,10 +200,10 @@ public class MainGM : MonoBehaviour
             money -= 10000;
             gamblePanel.SetActive(true);
         }
-        else Debug.Log("µ·ÀÌ ºÎÁ·ÇÕ´Ï´Ù.");
+        else Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
     }
 
-    //½ºÅÈ
+    //ï¿½ï¿½ï¿½ï¿½
 
     public void StatUp(ref int stat, string goodMsg, string badMsg, string stopMsg)
     {
@@ -231,23 +231,23 @@ public class MainGM : MonoBehaviour
 
     public void Hair()
     {
-        StatUp(ref hair, "³ª ÀÌÁ¤µµ¸é ºÁ ÁÙ¸¸ ÇÑµ¥?", "¸Ó¸®°¡ ¸ÁÇØ¹ö·È¾î!", "hair stop");
+        StatUp(ref hair, "ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ù¸ï¿½ ï¿½Ñµï¿½?", "ï¿½Ó¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¹ï¿½ï¿½È¾ï¿½!", "hair stop");
     }
     public void Skin()
     {
-        StatUp(ref skin, "ÃËÃËÇÏ°Ô ¸¸µé¾îÁÖÁö", "»ó³²ÀÚÆ¯ °ÅÄ£ÇÇºÎ.", "skin stop");
+        StatUp(ref skin, "ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½ï¿½ï¿½ï¿½Æ¯ ï¿½ï¿½Ä£ï¿½Çºï¿½.", "skin stop");
     }
     public void Weight()
     {
-        StatUp(ref weight, "¿À´Ã Àú³áÀº »ø·¯µå", "ÇÏ·çÁ¤µ· Ä¡ÆÃµ¥ÀÌ ±¦Âú¾Æ!", "Weight stop");
+        StatUp(ref weight, "ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½", "ï¿½Ï·ï¿½ï¿½ï¿½ï¿½ï¿½ Ä¡ï¿½Ãµï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½!", "Weight stop");
     }
     public void Talk()
     {
-        StatUp(ref talk, "¿À´ÃÀº Ã¥À» ÀÐ¾îº¼±î", "À¯Æ©ºê ´ñ±Ûº¸¸é¼­ µå¸³À» ¹è¿ìÀÚ", "Talk stop");
+        StatUp(ref talk, "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¥ï¿½ï¿½ ï¿½Ð¾îº¼ï¿½ï¿½", "ï¿½ï¿½Æ©ï¿½ï¿½ ï¿½ï¿½Ûºï¿½ï¿½é¼­ ï¿½å¸³ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½", "Talk stop");
     }
     public void Style()
     {
-        StatUp(ref style, "ÀÌ°Ô ¿äÁò À¯ÇàÇÏ´Â ½ºÅ¸ÀÏ?", "¾ö¸¶°¡ °ñ¶óÁØ ¿Ê ÀÌ»Ú´ç", "Style stop");
+        StatUp(ref style, "ï¿½Ì°ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½?", "ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì»Ú´ï¿½", "Style stop");
     }
 
     public void SelectDateScenes()
@@ -260,7 +260,7 @@ public class MainGM : MonoBehaviour
             SceneManager.LoadScene("Date");
         }
         else
-            Debug.Log("½ºÅÈ ÃÑÇÕÀÌ " + dateStatLimit + "Á¡ ÀÌ»óÀÏ½Ã °¡´ÉÇÕ´Ï´Ù.");
+            Debug.Log("ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " + dateStatLimit + "ï¿½ï¿½ ï¿½Ì»ï¿½ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.");
     }
 
     public void MiniGameCheck()
@@ -300,7 +300,7 @@ public class MainGM : MonoBehaviour
         MiniGameCheck();
     }
 
-    // ¿É¼Ç Ã¢
+    // ï¿½É¼ï¿½ Ã¢
     public void OptionOpen()
     {
         option.SetActive(true);
@@ -365,11 +365,11 @@ public class MainGM : MonoBehaviour
     public void OptionQuit()
     {
         SaveDistroy();
-        // ¿¡µðÅÍ¿¡¼­ ½ÇÇà ÁßÀÎÁö È®ÀÎ (¿¡µðÅÍ¿¡¼­ Á¾·á Å×½ºÆ®¸¦ À§ÇØ ÇÊ¿ä)
+        // ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ È®ï¿½ï¿½ (ï¿½ï¿½ï¿½ï¿½ï¿½Í¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½×½ï¿½Æ®ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ê¿ï¿½)
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-        // ºôµåµÈ °ÔÀÓ¿¡¼­ °ÔÀÓÀ» Á¾·áÇÕ´Ï´Ù.
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ó¿ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
         Application.Quit();
 #endif
     }
