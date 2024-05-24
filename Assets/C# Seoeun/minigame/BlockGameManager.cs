@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class BlockGameManager : MonoBehaviour
 {
@@ -18,7 +19,21 @@ public class BlockGameManager : MonoBehaviour
             return instance;
         }
     }
+    private int chocoCount = 13;
+    public void OnChocoDestroyed()
+    {
+        chocoCount--;
+        if (chocoCount == 0)
+        {
+            Debug.Log("Success! All chocolates are destroyed.");
+            
+            int PLUS = 20;
+            PlayerPrefs.SetInt("PLUS", PLUS);        
+            
+            SceneManager.LoadScene("Main");
 
+        }
+    }
     private bool is_GameOver = false;
 
     public bool Is_GameOver
