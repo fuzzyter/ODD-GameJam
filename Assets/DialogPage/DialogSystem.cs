@@ -92,7 +92,7 @@ public class DialogSystem : MonoBehaviour
         Choice01.gameObject.SetActive(false);
         Choice02.gameObject.SetActive(false);
 
-        // ÀÏ·¯½ºÆ® ÀÌ¹ÌÁö¸¦ ¾÷µ¥ÀÌÆ®
+        // ï¿½Ï·ï¿½ï¿½ï¿½Æ® ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         if (!string.IsNullOrEmpty(illustrationName))
         {
             illustrationImage.gameObject.SetActive(true);
@@ -103,11 +103,11 @@ public class DialogSystem : MonoBehaviour
             illustrationImage.gameObject.SetActive(false);
         }
 
-        // ¹è°æ ÀÌ¹ÌÁö¸¦ ¾÷µ¥ÀÌÆ®
+        // ï¿½ï¿½ï¿½ ï¿½Ì¹ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
         if (!string.IsNullOrEmpty(backgroundName))
         {
             BlackImage.gameObject.SetActive(false);
-            Debug.Log($"Loading background: {backgroundName}"); // Debug.Log Ãß°¡
+            Debug.Log($"Loading background: {backgroundName}"); // Debug.Log ï¿½ß°ï¿½
             Sprite backgroundSprite = Resources.Load<Sprite>(backgroundName);
             if (backgroundSprite != null)
             {
@@ -124,7 +124,7 @@ public class DialogSystem : MonoBehaviour
             backgroundImage.sprite = null;
         }
        
-        //¼±ÅÃÁö°¡ Á¸ÀçÇÑ´Ù¸é ¼±ÅÃÃ¢/°ËÀº¹è°æ Ç¥½Ã
+        //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ñ´Ù¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢/ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½
         if (!string.IsNullOrEmpty(ChoiceT01))
         {
             Debug.Log(ChoiceT01);
@@ -137,7 +137,7 @@ public class DialogSystem : MonoBehaviour
 
         }
 
-        else //¼±ÅÃÁö°¡ °ø¶õÀÌ¸é ¼±ÅÃÃ¢X
+        else //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ì¸ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢X
         {
             Choice01.gameObject.SetActive(false);
             Choice02.gameObject.SetActive(false);
