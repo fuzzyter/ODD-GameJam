@@ -18,55 +18,81 @@ public class DialogSystem : MonoBehaviour
     public TextMeshProUGUI ChoiceText02;
 
     public static int currentLineIndex = 0;
+    private string Name;
 
     void Start()
     {
+        Name = PlayerPrefs.GetString("PlayerName");
+        Debug.Log(Name);
+
         if (CSVRead.doubleChatList != null && CSVRead.doubleChatList.Length > 0)
         {
             DisplayLine();
         }
+
+        Choice01.onClick.AddListener(OnChoice01Clicked);
+        Choice02.onClick.AddListener(OnChoice02Clicked);
     }
 
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
-            if (currentLineIndex < CSVRead.doubleChatList.GetLength(0) - 1)
+
+            if (currentLineIndex < CSVRead.doubleChatList.GetLength(0) - 1 && currentLineIndex != 64)
             {
+                Debug.Log("인덱스++전"+currentLineIndex);
                 currentLineIndex++;
+                Debug.Log("인덱스++후"+currentLineIndex);
                 if (currentLineIndex == 38)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
-                if (currentLineIndex == 72)
+                if (currentLineIndex == 70)
+                {
+                    currentLineIndex = 80;
+                }
+                if (currentLineIndex == 80)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
-                if (currentLineIndex == 81)
+                if (currentLineIndex == 88)
+                {
+                    currentLineIndex = 97;
+                }
+                if (currentLineIndex == 97)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
-                if (currentLineIndex == 92)
+                if (currentLineIndex == 101)
+                {
+                    currentLineIndex = 111;
+                }
+                if (currentLineIndex == 111)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
-                if (currentLineIndex == 104)
+                if (currentLineIndex == 119)
+                {
+                    currentLineIndex = 130;
+                }
+                if (currentLineIndex == 130)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
-                if (currentLineIndex == 153)
+                if (currentLineIndex == 179)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
-                if (currentLineIndex == 164)
+                if (currentLineIndex == 190)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
-                if (currentLineIndex == 187)
+                if (currentLineIndex == 213)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
-                if (currentLineIndex == 204)
+                if (currentLineIndex == 231)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
@@ -84,8 +110,23 @@ public class DialogSystem : MonoBehaviour
         string ChoiceT02 = CSVRead.doubleChatList[currentLineIndex, 5];
         string backgroundName = CSVRead.doubleChatList[currentLineIndex, 6];
 
-        nameText.text = speakerName;
-        dialogueText.text = dialogueLine;
+        if (speakerName == "남주")
+        {
+            nameText.text = Name;
+        }
+        else
+        {
+            nameText.text = speakerName;
+        }
+        if (dialogueLine == ". 내 이름이야.")
+        {
+            dialogueText.text = Name + dialogueLine;
+        }
+        else
+        {
+            dialogueText.text = dialogueLine;
+
+        }
         ChoiceText01.text = ChoiceT01;
         ChoiceText02.text = ChoiceT02;
 
@@ -144,5 +185,68 @@ public class DialogSystem : MonoBehaviour
             ChoiceText01.gameObject.SetActive(false);
             ChoiceText02.gameObject.SetActive(false);
         }
+    }
+
+    // Choice01 버튼 클릭 시 호출될 메서드
+    public void OnChoice01Clicked()
+    {
+        // Choice01 클릭 시 처리할 로직
+        Debug.Log("Choice01 clicked");
+
+        // currentLineIndex 값에 따라 다른 동작 수행
+        /*
+        if (currentLineIndex == 63)
+        {
+            currentLineIndex = 64;
+        }
+        else if (currentLineIndex == 82)
+        {
+            // Choice01 클릭 시의 다른 동작
+            currentLineIndex = 90;
+        }
+        else
+        {
+            // 기본 동작
+            currentLineIndex++;
+        }
+        */
+        currentLineIndex++;
+        DisplayLine();
+    }
+
+    // Choice02 버튼 클릭 시 호출될 메서드
+    public void OnChoice02Clicked()
+    {
+        // Choice02 클릭 시 처리할 로직
+        Debug.Log("Choice02 clicked");
+
+        // currentLineIndex 값에 따라 다른 동작 수행
+        if (currentLineIndex == 64)
+        {
+            Debug.Log("Choice02 63번째줄");
+            // Choice02 클릭 시의 동작
+            currentLineIndex = 71;
+        }
+        else if (currentLineIndex == 83)
+        {
+            // Choice02 클릭 시의 다른 동작
+            currentLineIndex = 89;
+        }
+        else if (currentLineIndex == 99)
+        {
+            // Choice02 클릭 시의 다른 동작
+            currentLineIndex = 102;
+        }
+        else if (currentLineIndex == 114)
+        {
+            // Choice02 클릭 시의 다른 동작
+            currentLineIndex = 120;
+        }
+        else
+        {
+            // 기본 동작
+            currentLineIndex++;
+        }
+        DisplayLine();
     }
 }
