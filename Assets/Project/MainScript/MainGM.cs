@@ -305,7 +305,7 @@ public class MainGM : MonoBehaviour
             PlayerPrefs.SetInt("runOnlyOnce", 1);
             dateStatLimit += 12;
             Save();
-            SceneManager.LoadScene("Date");
+            SceneManager.LoadScene("Script");
         }
         else
             Debug.Log("you need " + dateStatLimit + "favorability.");
