@@ -7,11 +7,12 @@ using UnityEngine.UI;
 
 public class Option_Panel : MonoBehaviour
 {
-
+   // public GameObject optionPanel;
     // Start is called before the first frame update
     void Start()
     {
-        
+       // optionPanel = GameObject.FindWithTag("TitleOptionPanel");
+       // optionPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -22,7 +23,9 @@ public class Option_Panel : MonoBehaviour
     public void OnClickMain()
     {
         Debug.Log("메인으로 돌아가기");
-        SceneManager.LoadScene("Background");
+
+        // optionPanel.SetActive(false);
+        SceneManager.LoadScene("background");
     }
 
 

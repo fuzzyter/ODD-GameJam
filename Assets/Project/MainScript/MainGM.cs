@@ -57,7 +57,9 @@ public class MainGM : MonoBehaviour
     public GameObject goodEndingBtn;
     public GameObject badEndingBtn;
     public GameObject hiddenEndingBtn;
-
+    public GameObject goodEndingImg;
+    public GameObject badEndingImg;
+    public GameObject hiddenEndingImg;
 
 
     //���ڸ��
@@ -127,6 +129,7 @@ public class MainGM : MonoBehaviour
             setting++;
         }
 
+        
         option.SetActive(false);
         gamblePanel.SetActive(false);
 
@@ -134,6 +137,10 @@ public class MainGM : MonoBehaviour
         gCoroutine = GameObject.FindWithTag("GambleMotion");
         jCoroutine.SetActive(false);
         gCoroutine.SetActive(false);
+        
+        goodEndingImg.SetActive(false);
+        badEndingImg.SetActive(false);
+        hiddenEndingImg.SetActive(false);
 
         MiniGameCheck();
     }
@@ -158,19 +165,26 @@ public class MainGM : MonoBehaviour
 
     }
 
+    
     public void GoodEnding()
     {
-        Debug.Log("Good Ending");
+        goodEndingImg.SetActive(true);
     }
     public void BadEnding()
     {
-        Debug.Log("Bad Ending");
+        badEndingImg.SetActive(true);
     }
     public void HiddenEnding()
     {
-        Debug.Log("Hidden Ending");
+        hiddenEndingImg.SetActive(true );
     }
     void NotActive()
+    {
+        goodEndingBtn.SetActive(false);
+        badEndingBtn.SetActive(false);
+        hiddenEndingBtn.SetActive(false);
+    }
+    public void NotActive2()
     {
         partTimeJobBtn.SetActive(false);
         gambleBtn.SetActive(false);
@@ -179,28 +193,21 @@ public class MainGM : MonoBehaviour
     // ending
     public void Ending()
     {
-        if(favorability >= 100) // good ending
+        NotActive();
+        if (favorability >= 100)
         {
-            NotActive();
+            NotActive2();
             goodEndingBtn.SetActive(true);
         }
-        else if(day >= 30 && favorability == 0) // hidden ending
+        else if(day >= 30 && favorability <= 0)
         {
-            day = 30;
-            NotActive();
+            NotActive2();
             hiddenEndingBtn.SetActive(true);
         }
-        else if(day >= 30) //bad ending
+        else if(day >= 30)
         {
-            day = 30;
-            NotActive();
+            NotActive2();
             badEndingBtn.SetActive(true);
-        }
-        else
-        {
-            goodEndingBtn.SetActive(false);
-            badEndingBtn.SetActive(false);
-            hiddenEndingBtn.SetActive(false);
         }
     }
 
