@@ -44,10 +44,10 @@ public class DialogSystem : MonoBehaviour
                 Debug.Log("인덱스++전"+currentLineIndex);
                 currentLineIndex++;
                 Debug.Log("인덱스++후"+currentLineIndex);
-                //if (currentLineIndex == 38)
-                //{
-                //   SceneControl.Instance.LoadScene("Main");
-                //}
+                if (currentLineIndex == 38)
+                {
+                    SceneControl.Instance.LoadScene("Main");
+                }
                 if (currentLineIndex == 70)
                 {
                     currentLineIndex = 80;
