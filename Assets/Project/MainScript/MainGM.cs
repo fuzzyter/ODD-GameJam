@@ -293,7 +293,7 @@ public class MainGM : MonoBehaviour
     {
         miniGameCnt++;
         Save();
-        SceneManager.LoadScene("MiniGame");
+        SceneManager.LoadScene("Mini_Block");
         MiniGameCheck();
     }
     public void SelectMiniGameScence2()

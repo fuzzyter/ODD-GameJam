@@ -27,8 +27,9 @@ public class BlockGameManager : MonoBehaviour
         {
             Debug.Log("Success! All chocolates are destroyed.");
             
-            int PLUS = 20;
-            PlayerPrefs.SetInt("PLUS", PLUS);        
+            int PLUS = PlayerPrefs.GetInt("favorability");
+            PLUS += 10;
+            PlayerPrefs.SetInt("favorability", PLUS);        
             
             SceneManager.LoadScene("Main");
 
