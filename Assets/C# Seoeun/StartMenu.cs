@@ -8,18 +8,41 @@ public class StartMenu : MonoBehaviour
 {
     public GameObject OptionPanel;
 
-
     void Start()
     {
+        DataSend();
         OptionPanel.SetActive(false);
     }
 
     void Update()
     {
     }
+
+    public void DataSend()
+    {
+       
+    }
+    public void SaveDistroy()
+    {
+        PlayerPrefs.DeleteKey("money");
+        PlayerPrefs.DeleteKey("day");
+        PlayerPrefs.DeleteKey("hair");
+        PlayerPrefs.DeleteKey("skin");
+        PlayerPrefs.DeleteKey("weight");
+        PlayerPrefs.DeleteKey("talk");
+        PlayerPrefs.DeleteKey("style");
+        PlayerPrefs.DeleteKey("dateStatLimit");
+        PlayerPrefs.DeleteKey("favorability");
+        PlayerPrefs.DeleteKey("dateStatLimit");
+        PlayerPrefs.DeleteKey("miniGameCnt");
+        PlayerPrefs.DeleteKey("setting");
+        PlayerPrefs.DeleteKey("PlayerName");
+    }
     public void OnClickNewGame()
     {
+
         Debug.Log("Start New Game");
+        SaveDistroy();
         SceneManager.LoadScene("NameInput");
 
     }
@@ -27,6 +50,7 @@ public class StartMenu : MonoBehaviour
     public void OnClickLoad()
     {
         Debug.Log("Continue Game");
+        SceneManager.LoadScene("Main");
     }
 
     public void OnClickOption()

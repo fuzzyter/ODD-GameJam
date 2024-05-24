@@ -16,6 +16,8 @@ public class MiniGM : MonoBehaviour
 
     bool timeActive;
 
+    int fov; 
+
 
     //방
     public GameObject midRoom;
@@ -51,6 +53,7 @@ public class MiniGM : MonoBehaviour
 
     void Setting()
     {
+        fov = PlayerPrefs.GetInt("favorability");
         item_1 = false;
         item_2 = false;
         item_3 = false;
@@ -136,6 +139,8 @@ public class MiniGM : MonoBehaviour
             door.SetActive(false);
             character.SetActive(true);
             gameEndPanel.SetActive(true);
+            fov += 10;
+            PlayerPrefs.SetInt("favorability",fov);
         }
         else
             Debug.Log("물건을 다 찾으세요.");

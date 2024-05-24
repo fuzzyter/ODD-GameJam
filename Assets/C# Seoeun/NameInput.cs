@@ -14,10 +14,10 @@ public class NameInput : MonoBehaviour
 
     public void SubmitName()
     {
-        checkButton.onClick.AddListener(SubmitName);
+        //checkButton.onClick.AddListener(SubmitName);
         string playerName = nameInputField.text;
         PlayerPrefs.SetString("PlayerName", playerName); // 'PlayerName'이라는 키로 playerName 저장
-        SceneManager.LoadScene("Background");// 나중에 메인 씬 연결 후 이름 바꾸기
+        SceneManager.LoadScene("Main");// 나중에 메인 씬 연결 후 이름 바꾸기
 
     }
 }
