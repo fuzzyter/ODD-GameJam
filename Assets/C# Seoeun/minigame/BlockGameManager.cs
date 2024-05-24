@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class BlockGameManager : MonoBehaviour
 {
     private static BlockGameManager instance = null;
-    private int chocoCount = 10;
+
     public static BlockGameManager Instance
     {
         get
@@ -19,7 +19,7 @@ public class BlockGameManager : MonoBehaviour
             return instance;
         }
     }
-    
+    private int chocoCount = 13;
     public void OnChocoDestroyed()
     {
         chocoCount--;
@@ -27,9 +27,8 @@ public class BlockGameManager : MonoBehaviour
         {
             Debug.Log("Success! All chocolates are destroyed.");
             
-            int PLUS = PlayerPrefs.GetInt("favorability");
-            PLUS += 10;
-            PlayerPrefs.SetInt("favorability", PLUS);        
+            int PLUS = 20;
+            PlayerPrefs.SetInt("PLUS", PLUS);        
             
             SceneManager.LoadScene("Main");
 
