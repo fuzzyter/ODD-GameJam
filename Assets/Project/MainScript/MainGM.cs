@@ -11,6 +11,9 @@ public class MainGM : MonoBehaviour
     //¿©ÁÖ
     GameObject CharFace;
 
+    //input Scence¿¡¼­ ¹Þ¾Æ¿È
+    public string playerName;
+
     // ³¯Â¥,  µ·, ¿É¼Ç
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI dayText;
@@ -92,6 +95,7 @@ public class MainGM : MonoBehaviour
         PlayerPrefs.DeleteKey("dateStatLimit");
         PlayerPrefs.DeleteKey("miniGameCnt");
         PlayerPrefs.DeleteKey("setting");
+        PlayerPrefs.DeleteKey("PlayerName");
     }
 
     // Start is called before the first frame update
@@ -103,6 +107,9 @@ public class MainGM : MonoBehaviour
         money = PlayerPrefs.GetInt("money");
         day = PlayerPrefs.GetInt("day");
         setting = PlayerPrefs.GetInt("setting");
+
+        //¹Þ¾Æ¿È
+        playerName = PlayerPrefs.GetString("PlayerName");
 
         hair = PlayerPrefs.GetInt("hair");
         skin = PlayerPrefs.GetInt("skin");
@@ -324,6 +331,7 @@ public class MainGM : MonoBehaviour
         int savePoint9 = PlayerPrefs.GetInt("Is_miniGameCnt");
         int savePoint10 = PlayerPrefs.GetInt("Is_dateStatLimit");
         int savePoint11 = PlayerPrefs.GetInt("Is_setting");
+        string savePoint12 = PlayerPrefs.GetString("Is_PlayerName");
 
         PlayerPrefs.SetInt("Is_money", money);
         PlayerPrefs.SetInt("Is_day", day);
@@ -337,6 +345,7 @@ public class MainGM : MonoBehaviour
         PlayerPrefs.SetInt("Is_miniGameCnt", miniGameCnt);
         PlayerPrefs.SetInt("Is_dateStatLimit", dateStatLimit);
         PlayerPrefs.SetInt("Is_setting", setting);
+        PlayerPrefs.SetString("Is_PlayerName", playerName);
     }
 
     public void OptionLoad()
@@ -353,12 +362,14 @@ public class MainGM : MonoBehaviour
         PlayerPrefs.SetInt("miniGameCnt", PlayerPrefs.GetInt("Is_miniGameCnt"));
         PlayerPrefs.SetInt("dateStatLimit", PlayerPrefs.GetInt("Is_dateStatLimit"));
         PlayerPrefs.SetInt("setting", PlayerPrefs.GetInt("Is_setting"));
+        PlayerPrefs.SetString("PlayerName", PlayerPrefs.GetString("Is_PlayerName"));
         //Start();//lock (this) { }
         SceneManager.LoadScene("Main");
     }
 
     public void OptionTitle()
     {
+        Save();
         SceneManager.LoadScene("Background");
     }
 
