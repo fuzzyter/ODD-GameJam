@@ -17,7 +17,7 @@ public class NameInput : MonoBehaviour
         //checkButton.onClick.AddListener(SubmitName);
         string playerName = nameInputField.text;
         PlayerPrefs.SetString("PlayerName", playerName); 
-        SceneManager.LoadScene("Main");
+        SceneManager.LoadScene("Script");
 
     }
 }
