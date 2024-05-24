@@ -54,12 +54,14 @@ public class MainGM : MonoBehaviour
     [SerializeField] GameObject jCoroutine;
     [SerializeField] GameObject gCoroutine;
 
-    public GameObject endingBtn;
+    public GameObject goodEndingBtn;
+    public GameObject badEndingBtn;
+    public GameObject hiddenEndingBtn;
 
-    
+
 
     //���ڸ��
-    
+
 
     public void Save()
     {
@@ -134,13 +136,12 @@ public class MainGM : MonoBehaviour
         gCoroutine.SetActive(false);
 
         MiniGameCheck();
-        ending();
     }
 
     // Update is called once per frame
     void Update()
     {
-        moneyText.text = money.ToString() + "��";
+        moneyText.text = money.ToString() + "원";
         dayText.text = day.ToString() + "/30";
 
         hairText.text =hair.ToString();
@@ -152,22 +153,54 @@ public class MainGM : MonoBehaviour
 
         totStat = hair + skin + weight + talk + style;
 
+
+        Ending();
+
     }
 
-    // ending
-    public void ending()
+    public void GoodEnding()
     {
-        if(day >= 30)
+        Debug.Log("Good Ending");
+    }
+    public void BadEnding()
+    {
+        Debug.Log("Bad Ending");
+    }
+    public void HiddenEnding()
+    {
+        Debug.Log("Hidden Ending");
+    }
+    void NotActive()
+    {
+        partTimeJobBtn.SetActive(false);
+        gambleBtn.SetActive(false);
+        dateBtn.SetActive(false);
+    }
+    // ending
+    public void Ending()
+    {
+        if(favorability >= 100) // good ending
+        {
+            NotActive();
+            goodEndingBtn.SetActive(true);
+        }
+        else if(day >= 30 && favorability == 0) // hidden ending
         {
             day = 30;
-            partTimeJobBtn.SetActive(false);
-            gambleBtn.SetActive(false);
-            dateBtn.SetActive(false);
-            endingBtn.SetActive(true);
+            NotActive();
+            hiddenEndingBtn.SetActive(true);
         }
-        else 
+        else if(day >= 30) //bad ending
         {
-            endingBtn.SetActive(false);
+            day = 30;
+            NotActive();
+            badEndingBtn.SetActive(true);
+        }
+        else
+        {
+            goodEndingBtn.SetActive(false);
+            badEndingBtn.SetActive(false);
+            hiddenEndingBtn.SetActive(false);
         }
     }
 
@@ -204,7 +237,7 @@ public class MainGM : MonoBehaviour
             money -= 10000;
             gamblePanel.SetActive(true);
         }
-        else Debug.Log("���� �����մϴ�.");
+        else Debug.Log("not enough money.");
     }
 
     //����
@@ -225,9 +258,13 @@ public class MainGM : MonoBehaviour
             if (stat > 20)
                 stat = 20;
         }
-        else
+        else if(stat >= 20)
         {
             Debug.Log(stopMsg);
+        }
+        else
+        {
+            Debug.Log("not enough money.");
         }
     }
 
@@ -235,23 +272,23 @@ public class MainGM : MonoBehaviour
 
     public void Hair()
     {
-        StatUp(ref hair, "�� �������� �� �ٸ� �ѵ�?", "�Ӹ��� ���ع��Ⱦ�!", "hair stop");
+        StatUp(ref hair, "good hair!","bad hair", "hair stop");
     }
     public void Skin()
     {
-        StatUp(ref skin, "�����ϰ� ���������", "����Ư ��ģ�Ǻ�.", "skin stop");
+        StatUp(ref skin, "good skin!", "bad skin.", "skin stop");
     }
     public void Weight()
     {
-        StatUp(ref weight, "���� ������ ������", "�Ϸ����� ġ�õ��� ������!", "Weight stop");
+        StatUp(ref weight, "good weight", "bad weight.", "Weight stop");
     }
     public void Talk()
     {
-        StatUp(ref talk, "������ å�� �о��", "��Ʃ�� ��ۺ��鼭 �帳�� �����", "Talk stop");
+        StatUp(ref talk, "good talk!", "bad talk.", "Talk stop");
     }
     public void Style()
     {
-        StatUp(ref style, "�̰� ���� �����ϴ� ��Ÿ��?", "������ ����� �� �̻ڴ�", "Style stop");
+        StatUp(ref style, "good style!", "bad style.", "Style stop");
     }
 
     public void SelectDateScenes()
@@ -264,7 +301,7 @@ public class MainGM : MonoBehaviour
             SceneManager.LoadScene("Date");
         }
         else
-            Debug.Log("���� ������ " + dateStatLimit + "�� �̻��Ͻ� �����մϴ�.");
+            Debug.Log("you need " + dateStatLimit + "favorability.");
     }
 
     public void MiniGameCheck()
@@ -373,11 +410,11 @@ public class MainGM : MonoBehaviour
     public void OptionQuit()
     {
         SaveDistroy();
-        // �����Ϳ��� ���� ������ Ȯ�� (�����Ϳ��� ���� �׽�Ʈ�� ���� �ʿ�)
+        // editor quit code
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;
 #else
-        // ���� ���ӿ��� ������ �����մϴ�.
+        // editor quit code
         Application.Quit();
 #endif
     }
