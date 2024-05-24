@@ -10,7 +10,7 @@ public class MainGM : MonoBehaviour
 {
     //����
     GameObject CharFace;
-
+    public string playerName;
     // ��¥,  ��, �ɼ�
     public TextMeshProUGUI moneyText;
     public TextMeshProUGUI dayText;
