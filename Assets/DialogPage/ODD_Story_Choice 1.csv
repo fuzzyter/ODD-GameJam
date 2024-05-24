@@ -1,0 +1,302 @@
+id,캐릭터,표정,텍스트,선택지1,선택지2,배경,브금
+0, ,,공원 벤치에서 꽁냥거리는 커플이 보인다.,,,back_park,기본
+1,남주,,날도 더운데 왜 이렇게 가까이 붙어 있는 거야?,,,back_park,기본
+2, ,,남자의 이마에 맺힌 땀이 보인다. 그런데도 굳이 저렇게 붙어 있는 커플···.,,,back_park,기본
+3,남주,,내가 손 잡아본 여자는 엄마밖에 없는데···. 부럽다.,,,back_park,기본
+4, ,,그때 한 커플이 갑자기 입을 맞춘다. 깜짝 놀라 눈을 돌렸지만 시선이 간다.,,,back_park,기본
+5,남주,,공원에서 교양없게 저래도 돼?,,,back_park,기본
+6,남주,,···나도 교양 없고 싶다.,,,back_park,기본
+7, ,,얼마 전 일이 떠오른다.,,,,기본
+8, ,,수업을 같이 듣는 도희.,,,,기본
+9, ,,수업을 같이 듣는 여자애에게 한 눈에 반해 쪽지로 고백했지만 차여버렸다.,,,,기본
+10, ,,쪽팔려서 저번 수업은 가지도 않았다.,,,,기본
+11, ,,하지만 계속 이렇게 빠질 순 없지...,,,,기본
+12,남주,,하... 학교 가기 싫다,,,,기본
+13, ,girl_angry,쿨하게 그녀에게 인사를 건냈지만 처참히 무시당했다.,,,back_classroom,기본
+14, ,girl_angry,심란한 마음을 아는지 모르는지 나를 놀려대는 친구들.,,,back_classroom,기본
+15, ,girl_none,도희가 나를 쳐다본다,,,back_classroom,기본
+16, ,girl_none,도희를 보니 포기가 안 된다...,,,back_classroom,기본
+17, ,girl_none,내가 더 나은 사람이 된다면 기회가 있지 않을까..?,,,back_classroom,기본
+18, ,,하교하는 길.,,,back_road2,기본
+19, ,,비가 우수수 내린다.,,,back_road2,기본
+20, ,girl_none,건물 앞에 도희가 보인다.,,,back_road2,기본
+21, ,girl_none,뭐지?,,,back_road2,기본
+22, ,girl_none,초조해 보인다.,,,back_road2,기본
+23, ,girl_none,아무래도 우산이 없는 것 같다.,,,back_road2,기본
+24, ,girl_none,이건 기회다!,,,back_road2,기본
+25,남주,girl_none,저기... 우산 없어? ,,,back_road2,기본
+26,남주,girl_none,데려다줄까?,,,back_road2,기본
+27,도희,girl_none,아... 아뇨. 저 아빠가 데리러 온다고 하셔서.,,,back_road2,기본
+28,남주,girl_none,아 그렇구나...,,,back_road2,기본
+29, ,girl_none,갑자기 울리는 벨소리.,,,back_road2,기본
+30,도희,girl_none,응. 언제와? ...뭐? ,,,back_road2,기본
+31,도희,girl_angry,올 수 있다며. 나 빨리 가야한다고 했잖아.,,,back_road2,기본
+32, ,girl_none,아무래도 오래 걸릴 것 같다.,,,back_road2,기본
+33,도희,girl_none,…알겠어.,,,back_road2,기본
+34,남주,girl_none,데려다줄게.,,,back_road2,기본
+35,도희,girl_none,…감사해요. 지하철역까지만 가주시면 돼요.,,,back_road2,기본
+36, ,girl_none,도희와의 하굣길은 침묵이 대부분이었지만 행복했다.,,,back_road2,기본
+37, ,girl_none,그래. 이렇게 계속 관계를 개선해 나가는거야!!,,,back_road2,기본
+38, ,,오늘은 도희와 겹치는 수업이 없었다.,,,back_classroom,기본
+39,남주,,아쉽네... 매일 수업이 겹치면 좋을텐데. 응?,,,back_classroom,기본
+40, ,,정문에 익숙한 실루엣이 보인다.,,,back_classroom,기본
+41,도희,girl_none,안녕하세요.,,,back_classroom,기본
+42,남주,girl_none,어어... 안녕.,,,back_classroom,기본
+43,도희,girl_none,저번에 데려다주셔서 감사했어요.,,,back_classroom,기본
+44,도희,girl_none,중요한 면접이 있었거든요.,,,back_classroom,기본
+45,도희,girl_none,덕분에 안 늦었어요.,,,back_classroom,기본
+46,도희,girl_none,이건 답례로...,,,back_classroom,기본
+47, ,girl_none,도희가 쿠키를 건넸다.,,,back_classroom,기본
+48,도희,girl_none,별 건 아니고... 큰아버지가 카페를 하셔서.,,,back_classroom,기본
+49,도희,girl_none,헉! 고마워. 별 거 아니었는데 뭘.,,,back_classroom,기본
+50,도희,girl_none,네에... 그건 그렇고 본론은 따로 있어요.,,,back_classroom,기본
+51,도희,girl_none,저저번 수업 때 안오셨잖아요.,,,back_classroom,기본
+52,남주,girl_none,아. 그랬지.,,,back_classroom,기본
+53,도희,girl_none,팀플 조원이 그때 발표됐는데 저희가 같은 팀이 됐어요.,,,back_classroom,기본
+54,도희,girl_none,말씀드렸어야 했는데 번호가 없어서...,,,back_classroom,기본
+55,남주,girl_none,아..! 그랬구나!,,,back_classroom,기본
+56,남주,girl_none,그럼 번호 교환부터 할까?!,,,back_classroom,기본
+57,도희,girl_none,그래요.,,,back_classroom,기본
+58, ,girl_none,이게 웬 횡재냐!!,,,back_classroom,기본
+59, ,girl_none,도희의 번호를 얻었다.,,,back_classroom,기본
+60,도희,girl_none,그런데 혹시 성함이..,,,back_classroom,기본
+61, ,girl_none,아... 생각해 보니 도희랑 말 한번 제대로 해본 적이 없었다.,,,back_classroom,기본
+62, ,girl_none,이제라도 나의 소개를 해볼까.,,,back_classroom,기본
+63,,,,유머스럽게 소개한다,정석대로 소개한다,back_classroom,기본
+64,남주,girl_angry,. 내 이름이야.,,,back_classroom,기본
+65,남주,girl_angry,내가 도희보다 나이가 많으니까 '오빠'네.,,,back_classroom,기본
+66,남주,girl_angry,그래도 편하게 말해.,,,back_classroom,기본
+67,남주,girl_angry,뭐 먹고 싶은거 있으면 말하고. '오빠'가 그정돈 사줄 수 있어.,,,back_classroom,기본
+68,도희,girl_angry,하하... 네.,,,back_classroom,기본
+69, ,girl_angry,도희와 이렇게 스몰토크를 하다니 너무 행복하다.,,,back_classroom,기본
+70, ,girl_angry,팀플이라는 명분도 있겠다 앞으로도 이렇게 지낼 수 있겠지??,,,back_classroom,기본
+71,남주,girl_none,. 내 이름이야.,,,back_classroom,기본
+72,남주,girl_none,나는 동생 포함 네 식구인 평범한 가정에서 자랐고,,,back_classroom,기본
+73,남주,girl_none,취미는 유튜브 시청이고 특기는...,,,back_classroom,기본
+74,도희,girl_smile,...면접도 이렇게는 안보겠어요.,,,back_classroom,기본
+75,남주,girl_smile,응?,,,back_classroom,기본
+76,도희,girl_smile,그렇게 긴장 안 해도 돼요.,,,back_classroom,기본
+77,남주,girl_smile,내가 긴장하면 말이 많아져서... 하하,,,back_classroom,기본
+78, ,girl_smile,도희와 이렇게 스몰토크를 하다니 너무 행복하다.,,,back_classroom,기본
+79, ,girl_smile,팀플이라는 명분도 있겠다 앞으로도 이렇게 지낼 수 있겠지??,,,back_classroom,기본
+80, ,,저번에 쿠키를 받은 답례로 가는 길에 선물이라도 해볼까?,,,back_road2,기본
+81, ,,분명 도희도 감동 받겠지?,,,back_road2,기본
+82,,,,꽃다발을 준비한다.,카모마일 티백을 준비한다.,back_road2,기본
+83,,,도희에게 꽃다발을 건네줬다.,,,,
+84,남주,girl_none,오다가 네가 생각 나서 준비했어.,,,back_road2,기본
+85,도희,girl_angry,제가 꽃가루 알레르기가 있어서...,,,back_road2,기본
+86,남주,girl_angry,아... 미안.,,,back_road2,기본
+87,도희,girl_none,그래도 고마워요.,,,back_road2,기본
+88, ,girl_none,그냥 평소처럼 갈걸. 괜히 준비했다가 망했네...,,,back_road2,기본
+89,,,카모마일 티백을 준비했다,,,back_road2,기본
+90,남주,girl_none,오다가 네가 생각나서 준비했어.,,,back_road2,기본
+91,도희,girl_smile,제가 저번에 잠을 잘 못잔다고 말한 거 때문에 주시는 거예요?,,,back_road2,기본
+92, ,girl_smile,그런 걸 말했었나? 그래도 다행이다.,,,back_road2,기본
+93,남주,girl_smile,...응 그렇지! ,,,back_road2,기본
+94,남주,girl_smile,다 기억하고 있었어.,,,back_road2,기본
+95,도희,girl_smile,고마워요.,,,back_road2,기본
+96, ,girl_smile,오늘은 여주에게 잘 보인 거 같아 기분이 좋다.,,,back_road2,기본
+97, ,,오늘은 어제 유튜브에서 본 플러팅 기술을 사용해볼까?,,,back_road2,기본
+98,,,,자연스럽게 내가 차도쪽으로 간다.,유튜브에서 본 수지의 플러팅을 따라한다.,back_road2,기본
+99, ,girl_none,자연스럽게 차도쪽으로 오긴 했는데... 여주는 모르는 건가?,,,back_road2,기본
+100, ,girl_none,티를 내자니 쪼잔하게 볼 것 같은데 어떡하지...,,,back_road2,기본
+101, ,girl_none,결국 아무것도 하지 못하고 헤어졌다.,,,back_road2,기본
+102,,girl_none,유튜브에서 본 수지의 플러팅을 따라했다.,,,back_road2,기본
+103, ,girl_none,찡긋 찡긋.,,,back_road2,기본
+104,도희,girl_angry,뭐 하시는 거예요..?,,,back_road2,기본
+105,남주,girl_angry,이게 아닌가...?,,,back_road2,기본
+106,남주,girl_smile,아... 눈에 뭐가 들어간거 같아서...,,,back_road2,기본
+107,도희,girl_smile,제가 봐줄게요.,,,back_road2,기본
+108,도희,girl_smile,이쪽 봐봐요.,,,back_road2,기본
+109, ,girl_smile,도희가 내눈에 바람을 불어주다니..!,,,back_road2,기본
+110, ,girl_smile,예상치도 못했지만 너무 행복하다.,,,back_road2,기본
+111, ,,도희에 대해 좀 더 알고 싶다.,,,back_road2,기본
+112, ,,오늘은 어떤 주제로 이야기를 해볼까?,,,back_road2,기본
+113,,,,취미를 주제로 선택한다.,동물을 주제로 선택한다.,back_road2,기본
+114,남주,girl_none,도희 너는 취미가 뭐야?,,,back_road2,기본
+115,도희,girl_none,전 영화보는 거 좋아해요.,,,back_road2,기본
+116,남주,girl_none,오! 나도 영화 좋아하는데.,,,back_road2,기본
+117,남주,girl_none,식스센스라는 영화 알아?,,,back_road2,기본
+118,남주,girl_angry,나이트 샤말란이 감독 및 각본을 쓴 미국의 초자연적 픽션 심리 스릴러 영화야. 샤말란 감독은 이 영화로 일약 세계적인 스타 감독 반열에 올랐지. 이 영화는 귀신을 보는 능력을 가진 콜 세어와 그 능력을 믿지 않는 아동 심리학자 말콤 크로우의 대립구도를 그린 작품으로 반전 결말로 전 세계적으로 센세이션을 불러 일으키며 웰메이드 스릴러로 많은 화제를 모았어.,,,back_road2,기본
+119,도희,girl_angry,아... 그렇구나...,,,back_road2,기본
+120,남주,girl_none,도희 너는 동물 좋아해?,,,back_road2,기본
+121,도희,girl_none,저 동물 진짜 좋아해요.,,,back_road2,기본
+122,남주,girl_none,나도 진짜 좋아하거든.,,,back_road2,기본
+123,남주,girl_none,세상에 동물 좋아하는 사람치고 나쁜 사람 없다잖아.,,,back_road2,기본
+124,남주,girl_none,나는 물개 좋아해.,,,back_road2,기본
+125,도희,girl_smile,물개요? 나도 물개 좋아하는데.,,,back_road2,기본
+126,남주,girl_smile,그래?,,,back_road2,기본
+127,남주,girl_smile,이런 우연이 있나?,,,back_road2,기본
+128,도희,girl_smile,신기하네요.,,,back_road2,기본
+129, ,girl_smile,도희가 좋아하는 것 같아 다행이다.,,,back_road2,기본
+130, ,,오늘은 일요일.,,,back_cafeTable,기본
+131, ,,주말에 도희를 보는 건 처음이다!,,,back_cafeTable,기본
+132, ,,덕분에 학교가 아닌 카페에서 만나기로 했다,,,back_cafeTable,기본
+133, ,,왜인지 데이트하는 기분이다.,,,back_cafeTable,기본
+134, ,,괜히 긴장되네. ,,,back_cafeTable,기본
+135, ,,카톡이나 볼까?,,,back_cafeTable,기본
+136, ,,무심코 카톡 ‘다가오는 생일’에 들어갔다가 도희 프로필을 보았다.,,,back_cafeTable,기본
+137,남주,,4월 6일?,,,back_cafeTable,기본
+138,남주,,4월 6일이면... 내일이잖아?!,,,back_cafeTable,기본
+139,도희,girl_none,안녕하세요.,,,back_cafeTable,기본
+140,남주,girl_none,어... 어?,,,back_cafeTable,기본
+141,남주,girl_none,안녕.,,,back_cafeTable,기본
+142, ,girl_none,황급히 카톡을 껐다.,,,back_cafeTable,기본
+143, ,girl_none,숨길 건 없었는데...,,,back_cafeTable,기본
+144, ,girl_none,이참에 내일도 만나자고 해서 서프라이즈로 선물을 줘야지.,,,back_cafeTable,기본
+145,도희,girl_none,제가 좀 늦었죠. 죄송해요.,,,back_cafeTable,기본
+146,도희,girl_none,오래 기다렸어요?,,,back_cafeTable,기본
+147,,,,아니야 괜찮아. 나도 방금 왔어.,응. 오래 기다리긴 했지... 그래도 괜찮아.,back_cafeTable,기본
+148,도희,girl_none,지하철을 한 정거장 지나쳐서 늦었어요.,,,back_cafeTable,기본
+149,도희,girl_none,죄송해요.,,,back_cafeTable,기본
+150,남주,girl_none,그래도 한 정거장만 지나쳐서 다행이다.,,,back_cafeTable,기본
+151,모르는 남자,girl_none,헐. 도희야!,,,back_cafeTable,기본
+152,모르는 남자,girl_smile,뭐야? 오랜만이다!,,,back_cafeTable,기본
+153,도희,girl_smile,어? 오빠!,,,back_cafeTable,기본
+154,도희,girl_smile,오빠가 왜 여기 있어?,,,back_cafeTable,기본
+155,모르는 남자,girl_smile,나 휴학했잖아!,,,back_cafeTable,기본
+156,모르는 남자,girl_smile,잠깐 서울 올라와서 아빠 카페 일 도와주고 있었지.,,,back_cafeTable,기본
+157,도희,girl_smile,그랬구나~,,,back_cafeTable,기본
+158,도희,girl_smile,완전 몰랐네.,,,back_cafeTable,기본
+159,도희,girl_smile,올라왔으면 연락 좀 하지!,,,back_cafeTable,기본
+160,모르는 남자,girl_smile,미안 미안. 요새 바빠서 정신이 없었어.,,,back_cafeTable,기본
+161,모르는 남자,girl_smile,아. 그러고보니 친구분이랑 같이 있었구나.,,,back_cafeTable,기본
+162,모르는 남자,girl_smile,내가 방해했네. 미안.,,,back_cafeTable,기본
+163,모르는 남자,girl_smile,나는 이만 가볼게.,,,back_cafeTable,기본
+164,모르는 남자,girl_smile,내일 한 번 보자. 도희야.,,,back_cafeTable,기본
+165,모르는 남자,girl_smile,어차피 너 생일이잖아?,,,back_cafeTable,기본
+166,모르는 남자,girl_smile,오랜만에 나랑 같이 놀아. ,,,back_cafeTable,기본
+167,모르는 남자,girl_smile,밥 사줄게.,,,back_cafeTable,기본
+168,도희,girl_smile,정말?! 좋아.,,,back_cafeTable,기본
+169,도희,girl_smile,이따가 연락할게!,,,back_cafeTable,기본
+170, ,,비상… 이건 비상이다,,,back_cafeTable,기본
+171, ,,도희와의 나머지 대화는 어떻게 지나갔는지 기억도 잘 나지 않았다.,,,back_cafeTable,기본
+172, ,,그러고 보니 도희한테 남자친구가 있는지 물어본 기억이 없다.,,,back_cafeTable,기본
+173, ,,무슨 사이지?,,,back_cafeTable,기본
+174,도희,girl_none,…여기까지 해서 ppt까지 완벽해. ,,,back_cafeTable,기본
+175,도희,girl_none,다음에 만날 땐 발표 시뮬레이션 해보자.,,,back_cafeTable,기본
+176,남주,girl_none,…으응. 알겠어.,,,back_cafeTable,기본
+177,도희,girl_none,무슨 일 있어요?,,,back_cafeTable,기본
+178,남주,girl_none,아니... 아니야.,,,back_cafeTable,기본
+179, ,girl_none,그 남자가 등장한 후로 도희 보기가 너무 어색하다.,,,back_road2,기본
+180, ,girl_none,친해보였는데 도대체 무슨 사이일까…,,,back_road3,기본
+181, ,girl_none,이대로라면 도희에게 말실수할 것 같은데,,,back_road4,기본
+182, ,girl_none,어떡하지?,,,back_road5,기본
+183,,,,발표 연습은 다음에 하자고 할까...,그래도 할 건 해야지.,back_road6,기본
+184, ,,도희에게 전화가 왔다.,,,back_road7,기본
+185,남주,,여보세요?,,,back_road8,기본
+186,도희,,죄송해요...,,,back_road9,기본
+187,도희,,오늘 갑자기 급한 약속이 생겨서 발표 연습을 미뤄야 할 것 같아요.,,,back_road10,기본
+188,남주,,그렇구나. 알겠어.,,,back_road11,기본
+189, ,,그 남자와의 약속일까.,,,back_road12,기본
+190, ,,도희와 만나 발표 연습을 마쳤다.,,,back_classroom,기본
+191, ,,내일 발표를 하면 이제 팀플도 끝이다.,,,back_classroom,기본
+192, ,,이대로 끝낼 수는 없는데...,,,back_classroom,기본
+193, ,,무슨 말을 꺼내야 할지 모르겠다.,,,back_classroom,기본
+194,,,,그냥 솔직히 말한다.,참고 있는다.,back_classroom,기본
+195,도희,girl_none,오빠. 진짜 무슨 일 있어요?,,,back_classroom,기본
+196,남주,girl_none,아무 일 없어.,,,back_classroom,기본
+197,도희,girl_none,그냥 말해요.,,,back_classroom,기본
+198,남주,girl_none,이걸 너한테 말해도 되는지 모르겠는데...,,,back_classroom,기본
+199,남주,girl_none,그 남자가 신경쓰여.,,,back_classroom,기본
+200,남주,girl_none,사실 우린 아무 관계가 아니잖아.,,,back_classroom,기본
+201,남주,girl_none,근데 그 남자가 신경이 많이 쓰이는데...,,,back_classroom,기본
+202, ,girl_none,내가 무슨말을 하는지 모르겠다.,,,back_classroom,기본
+203,도희,girl_none,…카페에서 본 그 오빠 말하는 거에요?,,,back_classroom,기본
+204,남주,girl_none,응. 내가 이런 말 할 자격이 없단 건 알지만...,,,back_classroom,기본
+205,도희,girl_smile,사촌오빠인데...,,,back_classroom,기본
+206,남주,girl_smile,아…하. 그랬구나…!,,,back_classroom,기본
+207, ,girl_smile,민망해서 얼굴에 열이 오르는 게 느껴진다.,,,back_classroom,기본
+208,도희,girl_smile,오늘은 늦어서 먼저 가볼게요.,,,back_classroom,기본
+209,도희,girl_smile,다음에 봐요.,,,back_classroom,기본
+210,도희,girl_smile,연락할게요.,,,back_classroom,기본
+211, ,,다음? 팀플은 오늘로 끝인데?,,,back_classroom,기본
+212, ,,학교에서 보자는 뜻인가? 근데 연락은 뭐지.,,,back_classroom,기본
+213, ,,연락은 바로 왔다.,,,back_classroom,기본
+214, ,,도희는 놀자고 했다.,,,back_road1,기본
+215, ,,학교도 아니고 팀플도 아니고 놀자고?,,,back_road1,기본
+216, ,girl_smile,이걸 데이트 신청이라고 봐도 될까?,,,back_road1,기본
+217, ,girl_smile,우리는 밥도 먹고 영화도 보러 갔다.,,,back_road1,기본
+218, ,girl_smile,카페까지 간 후에 우리는 타로를 보러 가기로 했다.,,,back_road1,기본
+219, ,girl_smile,미신을 믿지는 않지만 도희와 가는데 그게 무슨 상관일까.,,,back_road1,기본
+220,점쟁이,girl_smile,한번 뽑아보게나.,,,back_road1,기본
+221,도희,girl_smile,난 하트 뽑았는데 뭐 뽑았어?,,,back_road1,기본
+222,,,,???,???,back_road1,기본
+223, ,girl_smile,아니 이게 무슨...,,,back_road1,기본
+224, ,girl_smile,딱 봐도 안 좋아 보이는 카드를 뽑았다...,,,back_road1,기본
+225, ,girl_smile,역시 이런 미신따위 믿을게 못 돼...,,,back_road1,기본
+226,도희,girl_blush,이거 보니 나랑 만나려면 엄청 잘해줘야 겠어요?,,,back_road1,기본
+227,남주,girl_blush,응?,,,back_road1,기본
+228, ,girl_blush,도희가 바로 다른 주제로 대화를 바꿨지만 제대로 들었다.,,,back_road1,기본
+229, ,girl_blush,도희도 나에게 관심이 생긴 걸까?,,,back_road1,기본
+230, ,girl_blush,타로... 오늘부터 믿는다.,,,back_road2,기본
+231,도희,girl_blush,저 할 말이 있어요.,,,back_road2,기본
+232,도희,girl_blush,처음엔 오빠가 낯설었는데...,,,back_road2,기본
+233,도희,girl_blush,언제부터인가 오빠랑 함께 있는 순간이 많아졌더라고.,,,back_road2,기본
+234,도희,girl_blush,오빤 재미없는 사람인데 같이 있을 때 제가 항상 웃고 있더라고요.,,,back_road2,기본
+235,도희,girl_blush,저랑 사귈래요?,,,back_road2,기본
+236,남주,girl_blush,나도... 좋아해 많이.,,,back_road2,기본
+237,,,의지박약 이건 나를 뜻하는 말인가...,,,,
+238,,,다시 원래의 나로 돌아오기까지 몇 달?,,,,
+239,,,아니 몇 주도 지나지 않았다.,,,,
+240,,,그래 나는 원래 이런 사람이었다,,,,
+241,,,이 악물고 나를 가꾸어도 할 수 있는게 없었다,,,,
+242,,,노력하면 할 수 있을줄 알았는데...,,,,
+243,,,,,,,
+244,,,,,,,
+245,,,,,,,
+246,,,,,,,
+247,,,,,,,
+248,,,,,,,
+249,,,,,,,
+250,,,,,,,
+251,,,,,,,
+252,,,,,,,
+253,,,,,,,
+254,,,,,,,
+255,,,,,,,
+256,,,,,,,
+257,,,,,,,
+258,,,,,,,
+259,,,,,,,
+260,,,,,,,
+261,,,,,,,
+262,,,,,,,
+263,,,,,,,
+264,,,,,,,
+265,,,,,,,
+266,,,,,,,
+267,,,,,,,
+268,,,,,,,
+269,,,,,,,
+270,,,,,,,
+271,,,,,,,
+272,,,,,,,
+273,,,,,,,
+274,,,,,,,
+275,,,,,,,
+276,,,,,,,
+277,,,,,,,
+278,,,,,,,
+279,,,,,,,
+280,,,,,,,
+281,,,,,,,
+282,,,,,,,
+283,,,,,,,
+284,,,,,,,
+285,,,,,,,
+286,,,,,,,
+287,,,,,,,
+288,,,,,,,
+289,,,,,,,
+290,,,,,,,
+291,,,,,,,
+292,,,,,,,
+293,,,,,,,
+294,,,,,,,
+295,,,,,,,
+296,,,,,,,
+297,,,,,,,
+298,,,,,,,
+299,,,,,,,
+300,,,,,,,
