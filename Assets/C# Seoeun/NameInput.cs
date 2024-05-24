@@ -16,8 +16,8 @@ public class NameInput : MonoBehaviour
     {
         //checkButton.onClick.AddListener(SubmitName);
         string playerName = nameInputField.text;
-        PlayerPrefs.SetString("PlayerName", playerName); // 'PlayerName'ï¿½Ì¶ï¿½ï¿½ Å°ï¿½ï¿½ playerName ï¿½ï¿½ï¿½ï¿½
-        SceneManager.LoadScene("Main");// ï¿½ï¿½ï¿½ß¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½Ì¸ï¿½ ï¿½Ù²Ù±ï¿½
+        PlayerPrefs.SetString("PlayerName", playerName); // 'PlayerName'ÀÌ¶ó´Â Å°·Î playerName ÀúÀå
+        SceneManager.LoadScene("Main");// ³ªÁß¿¡ ¸ÞÀÎ ¾À ¿¬°á ÈÄ ÀÌ¸§ ¹Ù²Ù±â
 
     }
 }
