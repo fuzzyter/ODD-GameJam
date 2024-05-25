@@ -131,13 +131,13 @@ public class DialogSystem : MonoBehaviour
                     currentLineIndex = 234;
                 }
                 //히든엔딩 스크립트 출력
-                else if (currentLineIndex == 232 && favo == 0 && day >= 30)
+                else if (currentLineIndex == 251 && favo == 0 && day >= 30)
                 {
                     Debug.Log(favo);
                     currentLineIndex = 253;
                 }
                 //배드엔딩 스크립트 출력
-                else if (currentLineIndex == 232 && favo < 100 && day >= 30)
+                else if (currentLineIndex == 242 && favo < 100 && day >= 30)
                 {
                     Debug.Log(favo);
                     currentLineIndex = 243;

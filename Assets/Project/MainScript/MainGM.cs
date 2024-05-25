@@ -175,13 +175,13 @@ public class MainGM : MonoBehaviour
     public void BadEnding()
     {
         badEndingImg.SetActive(true);
-        DialogSystem.currentLineIndex = 232;
+        DialogSystem.currentLineIndex = 242;
         SceneManager.LoadScene("Script");
     }
     public void HiddenEnding()
     {
         hiddenEndingImg.SetActive(true );
-        DialogSystem.currentLineIndex = 232;
+        DialogSystem.currentLineIndex = 251;
         SceneManager.LoadScene("Script");
     }
     void NotActive()
