@@ -1152,7 +1152,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chatTable_col: 8
-  chat_Table: {fileID: 4900000, guid: cf0404fcb0856cb4a86950d22edfd23b, type: 3}
+  chat_Table: {fileID: 4900000, guid: b3131e2db0e5a294fb5e18d7063f43c4, type: 3}
 --- !u!4 &1398081168
 Transform:
   m_ObjectHideFlags: 0

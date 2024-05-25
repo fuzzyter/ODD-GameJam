@@ -22,10 +22,15 @@ public class DialogSystem : MonoBehaviour
 
     int first_print;
 
+    int favo;
+    int day;
+
     void Start()
     {
         first_print = 0;
         Name = PlayerPrefs.GetString("PlayerName");
+        favo = PlayerPrefs.GetInt("favorability");
+        day = PlayerPrefs.GetInt("day");
         Debug.Log(Name);
 
         if (CSVRead.doubleChatList != null && CSVRead.doubleChatList.Length > 0)
@@ -42,8 +47,8 @@ public class DialogSystem : MonoBehaviour
         if(first_print == 0) { currentLineIndex++; DisplayLine(); first_print++; }
         if (Input.GetMouseButtonDown(0))
         {
-
-            if (currentLineIndex < CSVRead.doubleChatList.GetLength(0) - 1 && currentLineIndex != 64 && currentLineIndex != 83 && currentLineIndex != 99 && currentLineIndex != 114)
+            Debug.Log(currentLineIndex);
+            if (currentLineIndex < CSVRead.doubleChatList.GetLength(0) - 1 && currentLineIndex != 64 && currentLineIndex != 83 && currentLineIndex != 99 && currentLineIndex != 114 && currentLineIndex != 148 && currentLineIndex != 184 && currentLineIndex != 195 && currentLineIndex != 223)
             {
                 /*Debug.Log("인덱스++전"+currentLineIndex);
                 currentLineIndex++;
@@ -55,6 +60,8 @@ public class DialogSystem : MonoBehaviour
                 }
                 if (currentLineIndex == 70)
                 {
+                    favo += 5;
+                    PlayerPrefs.SetInt("favorability", favo);
                     //currentLineIndex--;
                     currentLineIndex = 80;
                 }
@@ -65,6 +72,8 @@ public class DialogSystem : MonoBehaviour
                 }
                 if (currentLineIndex == 88)
                 {
+                    favo += 5;
+                    PlayerPrefs.SetInt("favorability", favo);
                     currentLineIndex = 97;
                 }
                 if (currentLineIndex == 97)
@@ -74,6 +83,8 @@ public class DialogSystem : MonoBehaviour
                 }
                 if (currentLineIndex == 101)
                 {
+                    favo += 5;
+                    PlayerPrefs.SetInt("favorability", favo);
                     currentLineIndex = 111;
                 }
                 if (currentLineIndex == 111)
@@ -83,6 +94,8 @@ public class DialogSystem : MonoBehaviour
                 }
                 if (currentLineIndex == 119)
                 {
+                    favo += 5;
+                    PlayerPrefs.SetInt("favorability", favo);
                     currentLineIndex = 130;
                 }
                 if (currentLineIndex == 130)
@@ -110,9 +123,35 @@ public class DialogSystem : MonoBehaviour
                     currentLineIndex--;
                     SceneControl.Instance.LoadScene("Main");
                 }
-                Debug.Log("인덱스++전" + currentLineIndex);
+                
+                //해피엔딩 스크립트 출력
+                if (currentLineIndex == 232 && favo >= 100)
+                {
+                    Debug.Log(favo);
+                    currentLineIndex = 234;
+                }
+                //히든엔딩 스크립트 출력
+                else if (currentLineIndex == 232 && favo == 0 && day >= 30)
+                {
+                    Debug.Log(favo);
+                    currentLineIndex = 253;
+                }
+                //배드엔딩 스크립트 출력
+                else if (currentLineIndex == 232 && favo < 100 && day >= 30)
+                {
+                    Debug.Log(favo);
+                    currentLineIndex = 243;
+                }
+                
+                if (currentLineIndex == 241 || currentLineIndex == 250 || currentLineIndex == 262)
+                {
+                    SceneControl.Instance.LoadScene("Background");
+                }
+                
+
+                Debug.Log("인덱스++전" + currentLineIndex+" "+favo);
                 currentLineIndex++;
-                Debug.Log("인덱스++후" + currentLineIndex);
+                Debug.Log("인덱스++후" + currentLineIndex + " " + favo);
                 DisplayLine();
             }
         }
@@ -149,6 +188,7 @@ public class DialogSystem : MonoBehaviour
 
         Choice01.gameObject.SetActive(false);
         Choice02.gameObject.SetActive(false);
+
 
         // �Ϸ���Ʈ �̹����� ������Ʈ
         if (!string.IsNullOrEmpty(illustrationName))
@@ -202,6 +242,8 @@ public class DialogSystem : MonoBehaviour
             ChoiceText01.gameObject.SetActive(false);
             ChoiceText02.gameObject.SetActive(false);
         }
+
+       
     }
 
     // Choice01 버튼 클릭 시 호출될 메서드
@@ -210,23 +252,11 @@ public class DialogSystem : MonoBehaviour
         // Choice01 클릭 시 처리할 로직
         Debug.Log("Choice01 clicked");
 
-        // currentLineIndex 값에 따라 다른 동작 수행
-        /*
-        if (currentLineIndex == 63)
+        if(currentLineIndex > 130)
         {
-            currentLineIndex = 64;
+            favo += 15;
+            PlayerPrefs.SetInt("favorability", favo);
         }
-        else if (currentLineIndex == 82)
-        {
-            // Choice01 클릭 시의 다른 동작
-            currentLineIndex = 90;
-        }
-        else
-        {
-            // 기본 동작
-            currentLineIndex++;
-        }
-        */
         currentLineIndex++;
         DisplayLine();
     }
@@ -242,25 +272,35 @@ public class DialogSystem : MonoBehaviour
         {
             Debug.Log("Choice02 63번째줄");
             // Choice02 클릭 시의 동작
+            favo += 10;
+            PlayerPrefs.SetInt("favorability", favo);
             currentLineIndex = 71;
         }
         else if (currentLineIndex == 83)
         {
             // Choice02 클릭 시의 다른 동작
+            favo += 15;
+            PlayerPrefs.SetInt("favorability", favo);
             currentLineIndex = 89;
         }
         else if (currentLineIndex == 99)
         {
             // Choice02 클릭 시의 다른 동작
+            favo += 15;
+            PlayerPrefs.SetInt("favorability", favo);
             currentLineIndex = 102;
         }
         else if (currentLineIndex == 114)
         {
             // Choice02 클릭 시의 다른 동작
+            favo += 15;
+            PlayerPrefs.SetInt("favorability", favo);
             currentLineIndex = 120;
         }
         else
         {
+            favo += 5;
+            PlayerPrefs.SetInt("favorability", favo);
             // 기본 동작
             currentLineIndex++;
         }

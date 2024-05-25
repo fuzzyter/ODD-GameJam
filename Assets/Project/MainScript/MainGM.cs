@@ -169,14 +169,20 @@ public class MainGM : MonoBehaviour
     public void GoodEnding()
     {
         goodEndingImg.SetActive(true);
+        DialogSystem.currentLineIndex = 232;
+        SceneManager.LoadScene("Script");
     }
     public void BadEnding()
     {
         badEndingImg.SetActive(true);
+        DialogSystem.currentLineIndex = 232;
+        SceneManager.LoadScene("Script");
     }
     public void HiddenEnding()
     {
         hiddenEndingImg.SetActive(true );
+        DialogSystem.currentLineIndex = 232;
+        SceneManager.LoadScene("Script");
     }
     void NotActive()
     {
@@ -210,6 +216,8 @@ public class MainGM : MonoBehaviour
             badEndingBtn.SetActive(true);
         }
     }
+
+
 
     //�˹�
     public void PartTimeJob()
