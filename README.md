@@ -1,2 +1,2 @@
 # ODD-GameJam
-2024 TeamODD 1회 게임잼
+2024 TeamODD 제1회 게임잼
