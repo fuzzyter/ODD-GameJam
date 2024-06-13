@@ -38,19 +38,43 @@ public class DialogSystem : MonoBehaviour
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
+<<<<<<< Updated upstream
                 if (currentLineIndex == 72)
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
                 if (currentLineIndex == 81)
+=======
+                if (currentLineIndex == 71)
+                {
+                    favo += 5;
+                    PlayerPrefs.SetInt("favorability", favo);
+                    //currentLineIndex++;
+                    currentLineIndex = 80;
+                }
+                if (currentLineIndex == 80)
+                {
+                    currentLineIndex--;
+                    SceneControl.Instance.LoadScene("Main");
+                }
+                if (currentLineIndex == 89)
+>>>>>>> Stashed changes
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
+<<<<<<< Updated upstream
                 if (currentLineIndex == 92)
+=======
+                if (currentLineIndex == 102)
+>>>>>>> Stashed changes
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }
+<<<<<<< Updated upstream
                 if (currentLineIndex == 104)
+=======
+                if (currentLineIndex == 120)
+>>>>>>> Stashed changes
                 {
                     SceneControl.Instance.LoadScene("Main");
                 }

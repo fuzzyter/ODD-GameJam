@@ -168,6 +168,7 @@ public class MainGM : MonoBehaviour
     
     public void GoodEnding()
     {
+<<<<<<< Updated upstream
         goodEndingImg.SetActive(true);
     }
     public void BadEnding()
@@ -177,6 +178,23 @@ public class MainGM : MonoBehaviour
     public void HiddenEnding()
     {
         hiddenEndingImg.SetActive(true );
+=======
+        //goodEndingImg.SetActive(true);
+        DialogSystem.currentLineIndex = 232;
+        SceneManager.LoadScene("Script");
+    }
+    public void BadEnding()
+    {
+        //badEndingImg.SetActive(true);
+        DialogSystem.currentLineIndex = 242;
+        SceneManager.LoadScene("Script");
+    }
+    public void HiddenEnding()
+    {
+        //hiddenEndingImg.SetActive(true );
+        DialogSystem.currentLineIndex = 251;
+        SceneManager.LoadScene("Script");
+>>>>>>> Stashed changes
     }
     void NotActive()
     {
